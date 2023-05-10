@@ -1,0 +1,740 @@
+[
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/getting-started-with-momentum/1-getting-started-with-momentum/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Getting Started with Momentum",
+        "Section_Num": 1,
+        "Article_Title": "Accessing Momentum",
+        "Article_Num": 1,
+        "Article_Body": "Momentum is a web-based system that is accessible via a web browser. To launch Momentum, point your browser address to: \nhttp://<public-ip-or-domain>:8800/mv-admin \nIf you installed Momentum from AWS marketplace, the default port to access Momentum is 8800. \nThe above URL will launch the login page."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/getting-started-with-momentum/2-user-registration/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Getting Started with Momentum",
+        "Section_Num": 1,
+        "Article_Title": "User Registration\u00a0",
+        "Article_Num": 2,
+        "Article_Body": "To register for an account: \n\nClick \u201cSign Up\u201d link located on the login page. \n\n\nFill out the sign-up form and click \u201cSign Up\u201d button. \n\n\nAn activation email is sent your email address. \n\n\nIn your email, click \u201cActivate Account\u201d. \n\n\nAfter the account is activated, click on the Login link. \n\n\nUsing the credentials (username and password) that you created during the sign-up process, login to Momentum."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/getting-started-with-momentum/3-settings-and-configuration/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Getting Started with Momentum",
+        "Section_Num": 1,
+        "Article_Title": "Settings and Configuration",
+        "Article_Num": 3,
+        "Article_Body": "The following settings must be performed before using Momentum. If these settings are not done, some components may not work properly. \nClick the gear icon with your username next to it, located at the right top corner of the screen. Click \u201cSettings\u201d option. This will launch the settings page. \nRSA Key Setting: Momentum components communicate with each other using this secure RSA key. If not set, some components will not work. \n\nScroll down to the bottom of the settings page \n\n\nClick the button \u201cGenerate or Refresh RSA Key\u201d \n\nAfter clicking this button, the page will transition to the home page. To perform further settings, click the gear icon and click Settings again. \nComponent Settings \nOn the settings page, provide the following information for various components to work properly. \n[Parameters: AWS default values]\nMLOPS_URL: http://host1.momentum.local:9443\nMLOPS_PUBLIC_URL: http://<public-ip-or-domain>:9443\nMLOPS_TOKEN: See the MLOps Token How-tos\nMLOPS_CLUSTER: default_cluster\nCV_PUBLIC_URL: http://<public-ip-or-domain>:5555\nGPU_SERVER_HOST: host1.momentum.local \n\nClick \u201cSave Settings\u201d button to save the settings."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/getting-started-with-momentum/4-securing-with-ssl/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Getting Started with Momentum",
+        "Section_Num": 1,
+        "Article_Title": "Securing with SSL",
+        "Article_Num": 4,
+        "Article_Body": "To secure your Momentum access with SSL: \n\nClick the gear icon (from top right corner) and select \u201cSettings\u201d option. \n\n\nUnder the SSL Settings section: \n\n\nClick \u201cEnable SSL\u201d checkbox \n\n\nProvide SSL Port. Make sure this port is publicly accessible. \n\n\nDomain name: make sure the SSL certificate are valid for this domain or sub-domain. \n\n\nSSL KeyStore password: The password used in the SSL KeyStore file \n\n\nBrowse and upload the SSL KeyStore file. \n\n\nClick \u201cEnable SSL\u201d button \n\nClicking the \u201cEnable SSL\u201d button restarts the Momentum server and it may take a few minutes before Momentum is accessible. \nIf everything goes well and SSL certificate is valid for the domain, access Momentum using the https://domain-name:port/mv-admin \nIf anything goes wrong and Momentum is not accessible using https, access using the non-SSL URL. You may have to try again if https does not work. \nSome of the common errors with SSL settings could be due to the following reasons: \n\nThe KeyStore password is incorrect \n\n\nKeyStore file is invalid \n\n\nPort number is invalid or port is blocked by your network firewall. \n\n\nDomain name is invalid, incorrect, or the KeyStore file is not valid for this domain."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/getting-started-with-momentum/release-notes/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Getting Started with Momentum",
+        "Section_Num": 1,
+        "Article_Title": "Release Notes",
+        "Article_Num": 5,
+        "Article_Body": "Version 5.0.3, release date: 2023-02-05\nFeatures & Enhancements:\n\nData upload and exploration: Added features for visual data exploration using graphs and charts.\nEmitter: Included Elasticsearch as a data destination/sink.\nData Pipeline is now Data and ML Pipeline that allows to include ML models in the pipeline.\nMLOps and deployment related bug fixes."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-1-introduction/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Introduction",
+        "Article_Num": 1,
+        "Article_Body": "Momentum allows ingesting data from a wide variety of data sources and formats. Data can be transformed and prepared for any downstream processes, such as machine learning model training. You can also configure a data pipeline to automate data ingestion and transformation process."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-2-data-upload/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Uploading Data",
+        "Article_Num": 2,
+        "Article_Body": "If you want to ingest data from a file, it should be first uploaded to Momentum server, and then ingested. For example, if you want to ingest data from CSV, Excel, text, JSON, XML or images, the files must be present in the Momentum server. There are two ways to make the files available on Momentum server: \n\nVia SFTP/SCP upload: large files are recommended to be uploaded via SFTP/SCP. This mechanism also allows to automate the upload process. Your system admin should be able to setup the SFTP/SCP directory on the Momentum server. AWS single node Momentum does not support this feature out of the box. However, to enable this feature, contact our support. \n\n\nVia browser drag-and-drop: This is the most convenient method to send the files from your local computer to Momentum. The steps to upload a single file or multiple files are: \n\n\nFrom left hand side navigation panel, click \u201cData Upload & Exploration\u201d. \n\n\nClick \u201cUpload\u201d located on the top menu option. \n\n\nGive a directory name where you want to upload the files. \n\n\nIf the directory exists, the files will be uploaded to that directory. \n\n\nIf the directory does not exist, it will be created and the files will get uploaded to it. \n\n\nTo upload to subdirectories, use the back-slash \u201c/\u201d in the directory name. E.g. machine/training directory implies a subdirectory \u201ctraining\u201d within the parent directory \u201cmachine\u201d. \n\n\nEither click \u201cBrowse Files\u201d or drag one or more files from your local computer\u2019s file system and drop on to the rectangular area indicated so. \n\n\nClick \u201cSubmit\u201d button to transfer the files. \n\n\nIt may take a while to upload large files or large number of files. \nChecking File Upload \nTo check if the file/s were uploaded correctly: \n\nFrom the \u201cFile Upload and Exploration\u201d screen, expand the \u201cUploaded Files\u201d section and click on the directory name that you created in the previous step. \n\n\nIf the files were uploaded, you will see a list of all files uploaded successfully. \n\n\nClick on the file name to display up to 100 lines of the file. \n\n\nImportant Note\nThe file upload process needs to be repeated as many times data file needs to be ingested. In other words, every time data needs to be ingested, the file must be uploaded to the directory. \nAlso, note that the data from the directory is moved to an archived location and this directory is emptied when an ingester ingests the data, so that the directory is available for a new set of data to be ingested."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-1-ingester/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Ingesting Data",
+        "Article_Num": 3,
+        "Article_Body": "Momentum allows ingesting data from a wide variety of sources and formats. The process of ingesting data from different sources is the same, except that the configuration fields vary for different sources. \nThough the following steps are for ingesting CSV data, the process remains the same for all other data formats and sources. \n\nExpand \u201cIngester\u201d from the left navigation panel, and then click \u201cIngster Home\u201d. \n\n\nClick \u201cIngest Data\u201d located at the top menu option. \n\n\nSelect \u201cDelimited File\u201d for CSV upload. Select appropriate ingester type based on the data format or system you need to ingest data from. \n\nFill out the form on the next screen. \n\n\nClick \u201cBrowse Data Files\u201d to launch the screen to select the files to be ingested. \n\n\nTo select the files, expand the uploaded files, click the directory name, and select the files you want to ingest. If you want to ingest all files from the directory, simply close the popup window without selecting individual files. \n\n\nEnter asterisk or * in the file pattern field, and comma \u201c,\u201d in the delimiter field. If the data delimiter is different than comma, enter that. \n\n\nEnter max core for parallel ingestion and depending on the data size and number of CPU cores available. For example, 4 cores. \n\n\nSubmit the form to save the ingester. \n\n\nIn the next page, select the ingester you just created by clicking the checkbox and click \u201cRun\u201d located at the top menu. \n\n\nClick Ingester located at the top to refresh the ingester page to see the running status \n\n\nClick \u201cLogs\u201d link corresponding to the ingester to see the running logs \u2013 stdout and stderr. \n\n\nImportant Note\n\nFor a file based ingester, the data from the source directory is moved to an archive directory. In other words, after each ingester run, the source directory is emptied. \nFor database or external system based ingester, the source data is not moved."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-2-transformer/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Transformer",
+        "Article_Num": 4,
+        "Article_Body": "Momentum provides SQL-based interface for data transformation. Data cleaning, null removal, datatype conversion, column renaming, mathematical transformation, blending, merging, joining with multiple data sources are some of the transformation tasks that can be performed over data created within Momentum. Anything that is supported by ANSI-standard SQL can be performed using Momentum\u2019s transformation engine. A multi-level SQL based transformation is a powerful way of performing complex transformation tasks involving single or multiple data sources. \nIn this section we will explore how to perform a single SQL-based as well as multi-step transformations. \nSingle Step Transformer \nIn the following example, binary formatted date is transformed into human readable date using standard SQL. To do this: \n\nForm the left hand side navigation panel, expand Transformer\u201d and then click \u201cTransformer Home\u201d. \n\n\nClick \u201cNew Transformer\u201d located at the top menu option. The transformer window opens. \n\n\nThe transformer window is divided into two sections: \n\n\nThe left side section containing a form is used to write transformation SQL, and \n\n\nthe right-side section shows all data created within Momentum by various components. Clicking on any of the data sources will display 100 rows of data by default. When the data is displayed, it shows a query block at the top where you can write any SQL statements on top of this datasource to test out any potential transformation query. This view is provided to look at the data while writing the transformation query on the left side section. \n\nWe will write SQL to transform that column to a human readable date format. Fill out the form on the left section to configure the transformer as described below \n\nName: give a unique and meaningful name to this transformer \n\n\nTransformer Query: Write SQL statement to transform your data. Notice that the table name contains the first two letters of the components that generated data, followed by a dot, followed by the username and another dot, and the name of the component. For example, our datasource table name is \u201cio.sansari.machine_data_ingester\u201d where \u201cio\u201d stands for ingester output\u201d. \n\n\nIn our example, the SQL statements to convert binary DATE into human readable date is: \n\nSELECT *, from_unixtime(to_unix_timestamp(`DATE`, \u2018yyyy-MM-dd\u2019),\u2019yyyy-MM-dd HH:mm:ss\u2019) as TRANSFORMED_DATE from io.sansari.machine_data_ingester \n\nSelect output format, parquet being the default. \n\n\nMax core: specify how many CPU core of the cluster your transformer should run on concurrently to perform parallel operations. For example, 4 cores of CPU is good enough for small to mid-size data. For larger dataset, the more that core, the faster the processing will be. \n\n\nRAM: specify how much RAM each CPU core should occupy. 4GB per core is a good default for most cases and should be larger for very large dataset. \n\n\nSubmit to save the transformer configuration. If everything goes well, the page will transition to the Transformer Home page. \n\n\nFrom the Transformer Home page, check the transformer just created, and click the \u201cRun\u201d button located at the top menu bar. \n\n\nIt might take a few seconds to provision and start the transformation process, and depending on the data size, it make take some time to complete the transformation. \n\n\nClick on the \u201cTransformer\u201d menu option from the top menu to refresh the transformer status. \n\nClick on the Logs link to monitor the logs and watch for any errors. \n\n\nAfter the transformer is completed successfully, checkbox, and click on \u201cView Data\u201d to take a quick look of the data created by the transformation. See more on data exploration, \u201cExploring Data\u201d, below. \nMulti Step Transformer \nTo demonstrate multi-step transformation process, we will work on an example that creates training and test sets needed for machine learning model training. The steps are as follows. \nCreating Training and Test Sets Using Transformer \nThere are many ways to create training and test sets from the dataset we ingested. This section demonstrates how to use SQL compliant transformer to create the two sets for machine learning training and test. \nAssuming we want to create 80% training and 20% test sets from the original 10,000 records. We also want to randomize the data so that the training and test sets are not biased. We will create two transformers: \n\nThe training set transformer will have a randomized 8000 records \n\n\nThe test set transformer will have 2000 records that are not in the training set. \n\nCreating Training Set \nHere are the steps to create the training set: \n\nExpand \u201cTransformer\u201d and click \u201cTransformer Home\u201d to launch the transformer home page. \n\n\nClick \u201cNew Transformer\u201d from the top menu to open the form to write transformation SQL. Provide a meaningful name to this transformer, e.g. machine_data_training_set \n\n\nIn the Transformer Query block, write SQL statement as follows. Notice that the SQL statement contains the ingester name or a previously transformed dataset name. \n\n\nSave the Transformer. \n\n\nSelect the transformer and click \u201cRun\u201d located at the top menu bar. \n\n\nAfter the transformer is successfully done, use the data exploration and interactive query tools to check the data. \n\nSELECT * FROM tr.sansari.machine_data_transformer order by RAND() limit 8000 \nListing 2: Transformer SQL to generate training set \nNotice that the transformer page shows a list of data sources on the right-side panel. You can click on any data item to see the data in tabular form. This view is provided to give an aid to the user while writing the SQL statements for the transformer. \nCreating Test Set \nThis section demonstrates a multi-step transformation process, a powerful way of transforming complex data into meaningful forms. Here are the steps to create the test set: \n\nClick New Transformer at the top menu bar. Give a meaningful name to the transformer, such as machine_data_test_set \n\n\nWrite a simple \u201cSelect\u201d statement to load the data from the original data source, e.g. machine_data_transformer. Logically, the output of this statement will be stored in a temp table called \u201cS1\u201d. \n\nSELECT * FROM tr.sansari.machine_data_transformer \nListing 3: SQL statement to load all the data from a transformer \n\nClick \u201cAdd SQL Query\u201d to open another query block. We will write a simple SQL statement to load the data from the training set transformer that we created previously. The output of this SQL is logically stored in another temp table called \u201cS2\u201d. \n\nSELECT * FROM tr.sansari.machine_data_training_set \nListing 4: SQL statement to load transformer data that created training set \n\nThe final SQL statement will simply perform a MINUS operation between the two SQL statements above. \n\nselect * from s1 minus select * from s2 \nListing 5: SQL statement to perform MINUS operation \n\nSave and run this transformer. Check the result from the Data Upload and Exploration utilities. \n\nNotes: \n\nIf the column name is a SQL reserved keyword, such as DATE, backquote that column, e.g. `DATE` within the SQL statements. \n\n\nThe transformer stores data of the last run only. In other words, if you run the transformer multiple times, only the last run output will be stored in transformer. \n\n\nAdd the transformer in a data pipeline if you want incremental data or full data as a result of the transformation. See \u201cSetting Data Pipeline\u201d section."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-3-custom-processor/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Custom Processor",
+        "Article_Num": 5,
+        "Article_Body": "There is currently no information available on this topic. \nPlease contact Accure customer support for additional assistance."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-4-emitter/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Emitter: Exporting Data to External System",
+        "Article_Num": 6,
+        "Article_Body": "Data created by Momentum components are stored on a distributed data lake. Momentum can efficiently access these data for any processing and analysis. However, there are use cases when the processed data from Momentum needs to be exported to a third-party external system. The emitter allows exporting data from Momentum to various external systems. To keep Momentum data warehouse, Impulse, as an independent system, it is also treated as an external system. In other words, data from the lake needs to be exported to Impulse like any other external system. \nThis section explains how to configure an emitter that can be attached to a data pipeline (see Setting Up Data Pipeline section) to automate the data ingestion, transformation and export via emitter to external system. \nTo configure an emitter: \n\nExpand Emitter from the main menu option (left hand side menu panel) and click \u201cEmitter Home\u201d. \n\n\nClick \u201cCreate New Emitter\u201d located at the top menu bar and fill out the config form as explained below. \n\n\nEmitter Name: a user defined unique name to identify your emitter. \n\n\nGroup Name: this field is used in case of IoT to group multiple devices so that their data is collected within the same group. For all other purposes, give any name. \n\n\nMemory per Core: How much RAM for parallel process to be used. 1GB should be sufficient for most cases but should be given more for larger dataset. \n\n\nMax Core: Number of CPU cores to be used for parallelism. 1 core for small data should be enough. \n\n\nStorage Type: Select the appropriate external storage system where you want your data to be exported to. Depending on the type of the storage system, the form fields will different. In this example, the form fields of \u201cImpulse\u201d storage system is explained. \n\n\nURL: Give the hostname of Impulse server. For security, give the local hostname as opposed to public DNS or IP address. Make sure the local hostname or IP address is accessible to Momentum server. \n\n\nPort: The default port of Impulse is 18888. Use a different port of your admin has installed Impulse to listen on a different port. Make sure Momentum can access this port. \n\n\nWarehouse Alias: You must obtain the warehouse alias. See Creating a Warehouse to create a warehouse and alias to be used in this field. The alias name must exist in the data warehouse. \n\n\nTable Name: table name where you want to export data to. If the table name does not exist, it be created. \n\n\nUsername: the authorized username that has at least write permission to the data warehouse \n\n\nPassword: The authorized user\u2019s password. \n\n\nPrimary Partition Column: This must be a datatime column. If there is no datetime column, enter __none__ . \n\n\nPartition Column Datetime Format: Specify the datetime format. For example: YYYY-MM-DD hh:mm:sss. The datetime should be as specified by jodatime guidelines, https://www.joda.org/joda-time/key_format.html. If your dataset does not have a datetime column and you specified __none__ in the primary partition column field, enter __none__ here as well. \n\n\nPartition Granularity: This field is to define the granularity level of your partition either by all, none, second, minute, fifteen_minute, thirty_minute, hour, day, week, month, quarter or year. \n\n\nMissing Datatime Placeholder: If there is no datetime column or the datetime value is null or invalid, the datetime will be replaced by the value provided in this field. Leave it default to replace the datetime to current datetime. \n\n\nSave Mode: Select the appropriate mode as: \n\nOverwrite: delete all previous records and recreate new set of records Append: create new rows and append to existing dataset Combine and Overwrite: Combine new data with the old ones and then overwrite. Incremental: Update existing rows if matching primary key is found else create a new row. \n\nPartition Overwrite Period Start Date: For SaveMode = Combine & Overwrite, specify the start date of the partition that you want to overwrite with the new data. Otherwise, leave it blank. \n\n\nPartition Overwrite Period End Date: For SaveMode = Combine & Overwrite, specify the end date of the partition that you want to overwrite with the new data. Otherwise, leave it blank. \n\n\nStatus: Select active. \n\n\nClick Submit to save the emitter config. \n\nEmitter does not independently run. It always run as a part of a pipeline. \nCreating emitter\nEditing An Existing Emitter \n\nExpand Emitter menu from the left menu options \u2013> click \u201cEmitter Home\u201d \n\n\nOn the emitter home page, select (checkbox) the emitter you want to edit. \n\n\nClick \u201cEdit\u201d located at the top on the emitter home page. \n\n\nEdit the form fields as necessary and submit to save the changes."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-5-data-pipeline/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Setting Up a Data Pipeline",
+        "Article_Num": 7,
+        "Article_Body": "The data pipeline allows automating data ingestion, transformation, ML prediction, and export. You can chain various components in some logical sequence to automate data processing. The data pipeline runs in two modes: On Demand and Scheduled (described below). The data pipeline also allows to attach a custom processor that is build using the Processor interface and packaged as Jar file (more on custom processor below). \nA data pipeline is a sequence of execution of one or more data processing units. For example, a data pipeline may contain one or more ingesters, transformer, custom processing, ML models and emitter. \nTo create a data pipeline: \n\nCreate one or more ingesters. See Instructions here. \n\n\nCreate a transformer that may contain one or more SQL statements within it. Only one transformer per pipeline is allowed. Therefore, all relevant SQL statements must be included in a single transformer. See instructions on how to create a transformer containing multiple SQL statements. \n\n\nIf your data processing needs any custom processor, create one to be included in the pipeline. See instructions on how to create a processor. \n\n\nCreate an emitter if the processed data need to be stored outside of Momentum storage (for example, index in Impulse EDW, MongoDB, MySQL, Oracle etc). See instructions on how to create an emitter. \n\n\nCreate a data pipeline and add all required components to it. See below for more details. \n\nA few example pipelines: \n\none or more ingesters \u2013> one transformer \u2013> one or more processors \u2013> one emitter \none or more ingesters \u2013> emitter \none transformer \u2013> emitter \none transformer \u2013> one or more processors \u2013> emitter \na single ingester \u2013> emitter \none or more ingesters \u2013> one transformer \u2013> one or more ML models \u2013> one emitter \n\nIf emitter is omitted, the processed data of the pipeline is stored within the distributed data lake based on HFDS, the main storage system that Momentum utilizes for storing files. \nCreating A Data Pipeline \n\nExpand \u201cData Pipeline\u201d menu (under ETL section) from the main menu options \u2013> click \u201cPipeline Home\u201d. \n\n\nClick \u201cCreate New Pipeline\u201d from the top menu options \n\n\nFill out the form fields: \n\n\nName: a user defined unique name to identify the pipeline \n\n\nCore: Number of cluster cores to execute the pipeline job in distributed and parallel mode. For a big dataset and complex pipeline execution, allocate as much core as you have it available to speed up the execution. \n\n\nMemory: RAM per core. 4GB default works for most cases. Tune if required. \n\n\nOutput Format: If no emitter is attached to this pipeline, the data is stored within the Momentum\u2019s distributed file system (HDFS). Specify the output file format. \n\n\nRun Mode: \n\n\nOn demand: The pipeline needs to be manually executed by clicking the \u201cRun\u201d button. \n\n\nScheduled: Specify a Linux style cron expression to schedule the execution of the pipeline in an automated mode. Here is an online tool to create cron expressions. \n\n\nStorage mode: Used only if no emitter is attached to this pipeline. \n\n\nLog Input and output Count: If select yes, it will generate the count of processed data for auditing and inventory purpose. This is an expensive process and should be avoided if count is not necessary. \n\n\nSubmit the form to save it. \n\n\nOnce the pipeline form is submitted, you will need to add processing units to it. Here are the steps: \n\n\nAdd one or more ingesters: expand ingester menu \u2013> click on the ingester you want to add \u2013> a rectangular widget is added on the main canvas. \n\n\nAdd a transformer: expand transformer menu \u2013> click on the transformer you want to add \u2013> a rectangular widget is added on the main canvas. \n\n\nTo add one or more ML Models, expand the ML models from the left menu panel and click on the models you want to add to the pipeline. \n\n\nTo add a new processor (not already created): Click \u201cAdd Processor\u201d button located at the top of the pipeline canvas. Fill out the form to add to the canvas. \n\n\nTo add an existing processor: expand process menu \u2013> click on the processor you want to add \u2013> a rectangular widget is added on the main canvas. \n\n\nTo add a new emitter (not already created): Click \u201cAdd Emitter\u201d button located at the top of the pipeline canvas. Fill out the form to add to the canvas. For details on the form field, see the Emitter section of this wiki. \n\n\nTo add an existing emitter: expand emitter menu \u2013> click on the emitter you want to add to the canvas \u2013> a rectangular widget is added on the main canvas. \n\n\nIf needed, move the widgets around to organize. Widgets may overlap if the canvas size is small. Drag the overlapped widgets to separate them out. \n\n\nOnce all widgets are laid out on the canvas, connect them by clicking on the output tip of one widget to the input tail of the other widget. \n\n\nTo connect the units, click on the \u201cout\u201d tip and drag the arrow and click on the \u201cin\u201d tip. \n\n\nSave the pipeline by clicking the \u201cSave\u201d button. You may need to scroll down to see the \u201csave\u201d button. \n\nRunning Data Pipeline \nTo run the data pipeline: \n\nFrom the pipeline home page, click on the checkbox corresponding to the pipeline you want to run. \n\n\nClick \u201cRun\u201d button located at the top menu bar. \n\n\nWhen the pipeline starts running, it will show the status of execution of each unit that are included in the pipeline. When all the units complete execution, the pipeline status will show as \u201ccomplete\u201d and result as \u201csuccess\u201d. \nImportant Notes: \n1. A pipeline can contain only one transformer. If you need multiple transformers, write multi-step SQL statements (see Transformer section for details). \n2. Only those models that are deployed to MLOps can be included in the pipeline. If multiple versions of the same model is deployed, it will use the latest version for prediction."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/2-data-engineering/2-8-exploring-data/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Data Engineering",
+        "Section_Num": 2,
+        "Article_Title": "Exploring Data",
+        "Article_Num": 8,
+        "Article_Body": "There are many ways to explore the dataset in Momentum. We will perform a few of them to illustrate the functionality of Momentum. Launch the exploration page by clicking \u201cData Upload and Exploration\u201d located at the top of the left hand-side menu panel. Here are the steps of data exploration: \nExploring Data, Types and Distribution \nTo understand the data types and column-wise distribution, the steps are: \n\nExpand the data source, e.g., Ingester Output and select the ingester data you want to explore. \n\n\nClick \u201cExplore Data\u201d located at the top menu bar. \n\n\nIn the next page, the column wise data distribution will display. \n\n\nThe result shows the data type, total count, number of nulls, min, max, average, and standard deviation of each column. \n\nSimilarly, data created by other components, such as transformer, machine learning, or NLP, can be explored. \nViewing and Analyzing Data \nExpand the output components, e.g. the \u201cIngester Output\u201d and click the data component (e.g ingester) you want to explore. This will show 100 records of the data. To show more rows, edit the SQL query shown in the text area and click the \u2018blue button\u2019 next to it to run the updated SQL. For example, changing the LIMIT 200 will show 200 rows, \u2018LIMIT all\u2019 will show all the data (\u2018Limit all\u2019 may crash your browser if there is a lot of data). \nAlternatively, you can use Interactive Query to perform ad hoc analysis as described below. \nAd hoc Analysis Using Interactive Query \nInteractive Query is a powerful data exploration tool that allows you to execute any ANSI-SQL compliant query over data available within Momentum. \nData within Momentum is organized within the component that generates them. The organization structure is analogous to RDBMS structure in the sense that component name is treated as a database and data generated from various sources as tables of that database. For example, Ingester generated data are organized within \u201cIngester Output\u201d aliased as \u201cio\u201d. The data tables within the Ingester Output are referenced using fully qualified name as \u201cio.<username>.<tablename>\u201d. \nFor example: to explore the machine data to count number of records by Machine_failure, we run the following Interactive Query. \nSELECT AVG(VIBRATION), NC_MODE FROM io.ai.cnc_historical_data GROUP BY NC_MODE \nListing 1: Sample SQL statement to count by Machine_failure \nVisual Analysis \nVisual analysis allows us to plot data to understand the data distribution, outliers, trend, and overall quality of the data. To perform visual analysis, click on \u201cData Upload & Exploration\u201d and do the following: \n\nExpand, for example, \u201cIngester Output\u201d, click on the ingester you want to analyze. \n\n\nIt will show 100 rows of data. You will notice a graph icon at the top of the query result section. \n\n\nClicking on the graph icon will launch a modal window to configure your graph. \nDownloading Data for Offline Exploration \n\nExpand, for example, \u201cIngester Output\u201d or any other component that generated data, select the data you wish to download \n\n\nClick \u201cDownload Data\u201d located at the top menu bar. \n\n\nThe data will be downloaded in the format it was originally created, default being the parquet format. \n\nNote that, depending on the amount of data, it may take a while to generate and download the data from the cluster\u2019s distributed lake to your local computer."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/3-machine-learning/3-machine-learning/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Machine Learning",
+        "Section_Num": 3,
+        "Article_Title": "Machine Learning",
+        "Article_Num": 1,
+        "Article_Body": "Momentum is a machine learning automation platform. It has implementation of commonly used machine learning algorithms \u2013 supervised, unsupervised, reinforcement learning and recommendation engine. Momentum allows training ML models using drag-and-drop and UI-based approach without writing any code. The following section describes how to train a model, use the trained model for prediction and deploy it to MLOps. Regardless of the algorithm type, the process of training, prediction and deployment is the same for all ML types."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/3-machine-learning/3-2-feature-engineering/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Machine Learning",
+        "Section_Num": 3,
+        "Article_Title": "Feature Engineering",
+        "Article_Num": 2,
+        "Article_Body": "There are many algorithms for feature engineering and feature testing. We will explore one of them here. The process described below will be applicable to all feature engineering algorithms available in Momentum. \nPearson\u2019s Chi-Squared Testing \nTo perform hypothesis testing using Pearson\u2019s Chi-squared algorithm, the steps are: \n\nUnder the Machine Learning section, expand \u201cFeature Engineering\u201d and click \u201cFeatures Home\u201d \n\n\nIn the next page, select the algorithm, Pearson\u2019s Chi-squared and fill out the form. \n\n\nProvide a comma separate list of feature names and the dependent variable. Ensure these fields have numeric data. \n\n\nSave by clicking the Submit button. This will create a rectangular widget with the name you specified. \n\n\nExpand the data item, such as Ingester, from the left side menu panel, click the ingester to bring it on the main panel. This will create another rectangular widget with the ingester name on it. \n\n\nJoin the ingester widget to the Chi-squared config widget. First click the \u201cOut\u201d of ingester box, and then click the \u201cIn\u201d of the Chi-squared box. Click to save. \n\nFrom the Feature Engineering home page, select the configuration you just created, and click \u201cRun\u201d button. \n\n\nClick \u201cFeature Engineering\u201d at the top menu bar to refresh the page to see the running status. \n\n\nClick Logs to see the log messages. \n\n\nAfter the execution is successful, you can explore the output by clicking the \u201cView Data\u201d or from the Data Upload and Exploration section."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/3-machine-learning/3-1-model-training/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Machine Learning",
+        "Section_Num": 3,
+        "Article_Title": "Model Training",
+        "Article_Num": 3,
+        "Article_Body": "Traditionally, we split data into training and validation sets in 80:20 ratio. Before we start the model training, make sure you have ingested data into Momentum and created training and validation sets. If you have not done so, here are links that will helps you to prepare the data. \nHow to ingest data Momentum \nHow to create training and test sets using Transformer \nHow to create a data processing pipeline \nTo explain the process of training a model, we will use deep learning or artificial neural network based multi-layer perceptron classifier that predicts if a machine will fail given its operating condition. We have ingested the AI4I 2020 Predictive Maintenance Dataset (https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset), and created 80% training and 20% test sets. \nTo train a model, e.g., multi-layer perceptron classifier, here are the steps: \n\nExpand \u201cML Model\u201d from under the \u201cMachine Learning\u201d section of the left side menu panel, and click \u201cML Home\u201d to launch the ML home page. \n\n\nClick \u201cCreate New Model\u201d. \n\n\nFrom the \u201cSupervised Learning: Classification\u201d drop down, select \u201cDeep Learning/ Artificial Neural Network/Multilayer Perceptron Classifier. \n\n\nFill out the form as described below. \n\n\nModel Name: give a meaningful name to identify this model, for example Machine_Failure_Prediction_Model \n\n\nGive a version number, just in case you need to build multiple versions of this model. \n\n\nIn the Feature Field text area, supply a comma separated list of all features you want the model to learn from. In this example, we are using the following features: \n\nAir_temperature,Process_temperature,Rotational_speed,Torque,Tool_wear_in_min \nListing 3.1: Feature list \n\nCategorical/Non-numerical fields: comma separated list of all features that are not numeric. We will not have such field, so we will leave it empty. \n\n\nOneHot Encodable Field: Categorical and non-numeric fields should be encoded. Leave it empty in this case. \n\n\nTarget Field that needs to be predicted. Machine_failure is our target field. \n\n\nNumber of Classes: The machine failure data has only two classes \u2013 0 means no failure and 1 means failure. We will fill 2 in this field. \n\n\nScale Features: It is generally a good idea to scale the features, we will select \u201cyes\u201d. \n\n\nFeature excluded from scaling: We will leave this field empty. \n\n\nNumber of hidden layers: This is to configure the neural network. We will start with 3 hidden layers. \n\n\nNumber of nodes in each hidden layer: We will use varying number of nodes in each layer. For example, 19,11,9 to indicate we want to use 19 nodes in the first hidden layer, 11 in the second and 9 in the last hidden layer. If you want to use the same number of neurons in each hidden layer, use a single number. For example, if we enter 16 in this field, all hidden layers will have 16 neurons. \n\n\nMax Number of Iteration: We are starting with 1000. If the algorithm converges before it reaches the max 1000 iterations, the training will automatically stop to avoid unnecessary computation and time. \n\n\nTraining: Test ratio to split the training data internally into this ratio. We are using 0.8:0.2 for 80% and 20% split. \n\n\nMax Core: This is to parallelize the training by using multiple CPU cores of the cluster. We are going to use 16 cores as our dataset is not large. For large dataset, using more or all available CPU cores of the cluster will speed up the training process. \n\n\nMemory per Core: For most training 4GB per core should be sufficient but may be increased for a large and complex model. \n\n\nThe number of partitions is not used at this time and is reserved for the future. \n\n\n \n\n \n\nAfter submitting the form, a rectangular config widget is created on the main body of the page. \n\n\nExpand Transformer from the left menu panel and click on the training set transformer to bring it to the main page. \n\n\nClick on the \u201cOut\u201d on the training set rectangle and click on the \u201cIn\u201d of the model config rectangle. This will join the training dataset to the model config. \n\n\nSaving the configuration will take the screen to the ML home page. \n\n\nClick \u201cRun\u201d located at the top menu to start the model training."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/3-machine-learning/3-2-monitoring-ml-training/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Machine Learning",
+        "Section_Num": 3,
+        "Article_Title": "Monitoring ML Training",
+        "Article_Num": 4,
+        "Article_Body": "Machine learning model training is a compute-intensive and time-consuming process. There are a few ways to monitor the training progress. \n\nClick on ML Model located at the top menu bar or refresh your browser to see the current running status. While the model is running, it will show a spinner indicating the model is learning. \n\n\nClick \u201cLogs\u201d to see the runtime log \u2013 both stdout and stderr logs are displayed in a separate page. \n\n\nAfter the model is trained (and in some cases, while the model is learning), click the graph icon to show the \u201cModel Score\u201d curve. For the MLPC model, the curve shows a plot of model loss vs iterations. \n\nClick \u201cView Model\u201d to see the model metrics after the training is completed."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/3-machine-learning/3-2-ml-prediction/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Machine Learning",
+        "Section_Num": 3,
+        "Article_Title": "ML Prediction",
+        "Article_Num": 5,
+        "Article_Body": "Followings are the steps to predict the outcomes from a trained model: \n\nClick \u201cML Prediction\u201d on the left menu panel and click \u201cCreate New Prediction\u201d from the top menu bar. \n\n\nFill out the form. Make sure to provide the same list of features that were used in the model training. \n\n\nSelect \u201cNo\u201d for recommendation and leave all other fields to default for most cases. Select \u201cyes\u201d if this prediction is for recommendation engine. \n\n\nSave the form. \n\n\nExpand \u201cTransformer\u201d from the left menu and click on the test data set related transformer. \n\n\nExpand \u201cML Model\u201d and click on the ANN model just trained. \n\n\nConnect the two rectangles. \n\n\n \n\nSubmit to save the prediction configuration. \n\n\nSelect the prediction config and click \u201cRun\u201d located at the top menu bar to execute the prediction job. \n\n\nAfter the prediction is completed, use the data exploration to assess the accuracy of the model."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/3-machine-learning/3-5-model-deployment/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Machine Learning",
+        "Section_Num": 3,
+        "Article_Title": "Model Deployment",
+        "Article_Num": 6,
+        "Article_Body": "Momentum provides a 1-click deployment of ML models to MLOps. Before deploying a model to MLOps, make sure that Momentum is properly configured to locate the MLOps deployment. \nCheck Settings and Configuration and ensure the following properties are configured correctly: \n[Parameters: Example Values - Explanation\nMLOPS_URL: https://host1.momentum.local:9443 - Use internal hostname or IP and not public domain/IP. Contact your admin to obtain the hostname where MLOps is hosted. Momentum internally communicates with MLOps using this host and port and therefore for security reason, use an internal host:port.\nMLOPS_PUBLIC_URL: http://<public-ip-or-domain>:9443 - This is public hostname and port to access the MLOps UI and securely login to access its services.\nMLOPS_TOKEN: See the MLOps Token How-tos - This is a security token that is used to communicate with MLOps for security.\nMLOPS_CLUSTER: default_cluster - MLOps can seamlessly deploy models in various environment such as QA, sandbox, staging, production that may be either local server, Azure, AWS or any other cloud service providers. The default_cluster means the model will be hosted within the same machine where MLOps is deployed. \nTo deploy a model from Momentum to MLOps: \nFrom the ML Model home page, select the model you wish to deploy to MLOps, and click \u201cDeploy\u201d button located at the top menu bar. \nThe status message will indicate if the model is successfully deployed. \n\n\u201cDeploy\u201d button. \nLogin to MLOps to check in the model registry if the model just deployed is listed there. \n\nCheckout the following for MLOps details: \nCreating MLOps Security Token \nChecking Model Metadata and Prediction API \nChecking Model Quality Report \nChecking Data Drift Report \nChecking Model Operating Report"
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/cv/4-1-image-classification/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Computer Vision",
+        "Section_Num": 4,
+        "Article_Title": "Image Classification",
+        "Article_Num": 1,
+        "Article_Body": "There is currently no information available on this topic. \nPlease contact Accure customer support for additional assistance."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/cv/4-2-object-detection-using-ssd/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Computer Vision",
+        "Section_Num": 4,
+        "Article_Title": "Object Detection using SSD",
+        "Article_Num": 2,
+        "Article_Body": "There is currently no information available on this topic. \nPlease contact Accure customer support for additional assistance."
+    },
+    {
+        "URL": "https://accure.ai/docs/momentum-user-guide/cv/4-3-object-detection-using-yolo/",
+        "Product_Title": "Momentum",
+        "Section_Title": "Computer Vision",
+        "Section_Num": 4,
+        "Article_Title": "Object Detection using YOLO",
+        "Article_Num": 3,
+        "Article_Body": "There is currently no information available on this topic. \nPlease contact Accure customer support for additional assistance."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-operations-and-governance/mlops/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Section_Num": 1,
+        "Article_Title": "Introduction",
+        "Article_Num": 1,
+        "Article_Body": "MLOps stands for Machine Learning Operations. MLOps streamlines the process of deploying ML models to production, maintaining and monitoring them. MLOps also provides a continuous integration and continuous deployment (CI/CD) for machine learning modeling, testing, and deployment. \nMLOps allows deploying models trained using Momentum as well as models built using third party tools, systems, libraries and programming languages. Third party models must comply with one of the following standards: \n\nPMML or Predictive Model Markup Language \n\n\nONNX or Open Neural Network Exchange \n\n\nTensorFlow \n\nML models can be deployed to MLOps in any of the following ways: \n\nMomentum ML UI \nMLOps UI \nRestful API"
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-operations-and-governance/getting-secure-access-to-mlops/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Section_Num": 1,
+        "Article_Title": "Getting Secure Access to MLOps",
+        "Article_Num": 2,
+        "Article_Body": "To gain access to MLOps, you must have a valid credentials. Depending upon your organizational policy, sign up functionality may be disabled. In that case, your admin should create your account and assign appropriate privileges. See User and Role Management for details on how to create user and assign roles. \nIf sign up is enabled and you want to create a new organization within MLOps, the following steps will guide you to do that: \n\nOn the login page, click the link \u201cSignup\u201d \n\n\nFill out the sign-up form and click \u201cRegister\u201d button. \n\n\nIf everything goes well, your account will be created. \n\n\nBy default, you will be the admin of the organization."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-operations-and-governance/generating-security-token/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Section_Num": 1,
+        "Article_Title": "Generating Security Token",
+        "Article_Num": 3,
+        "Article_Body": "The security token is needed for Momentum integration with MLOPs or to use its Restful APIs. You can either see and copy the existing token or reset it (if the token is compromised). Here are the steps: \nViewing Security Token \n\nLogin to MLOps web interface using your secured credentials. \n\n\nOn the left hand-side menu panel, click \u201cAPIs\u201d menu option. \n\n\nIn the next page type your account password \n\n\nClick the button \u201cReveal Key\u201d (do not press enter key. Else it will show an error page) \n\n\nBy default, the API key is hidden. If the password is correct, clicking the Reveal Key button displays the API key that you can copy and paste wherever needed. \n\nResetting Security Token \n\nLogin to MLOps web interface using your secured credentials. \n\n\nOn the left hand-side menu panel, click \u201cAPIs\u201d menu option. \n\n\nIn the next page type your account password. \n\n\nClick the button \u201cReset Key\u201d (do not press enter key. Else it will show an error page) \n\n\nBy default, the API key is hidden. If the password is correct, clicking the Reset Key button displays the API key that you can copy and paste wherever needed."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-operations-and-governance/integrating-mlops-with-momentum/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Section_Num": 1,
+        "Article_Title": "Integrating MLOps with Momentum",
+        "Article_Num": 4,
+        "Article_Body": "Momentum provides a 1-click deployment of ML models to MLOps. Before deploying a model to MLOps, make sure that Momentum is properly configured to locate the MLOps deployment. \nCheck Settings and Configuration and ensure the following properties are configured correctly: \n[Parameters: Example Values - Explanation\nMLOPS_URL: https://host1.momentum.local:9443 - Use internal hostname or IP and not public domain/IP. Contact your admin to obtain the hostname where MLOps is hosted. Momentum internally communicates with MLOps using this host and port and therefore for security reason, use an internal host:port.\nMLOPS_PUBLIC_URL: http://<public-ip-or-domain>:9443 - This is public hostname and port to access the MLOps UI and securely login to access its services.\nMLOPS_TOKEN: See the MLOps Token How-tos - This is a security token that is used to communicate with MLOps for security.\nMLOPS_CLUSTER: default_cluster - MLOps can seamlessly deploy models in various environment such as QA, sandbox, staging, production that may be either local server, Azure, AWS or any other cloud service providers. The default_cluster means the model will be hosted within the same machine where MLOps is deployed."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/deploying-ml-models-via-momentum-ui/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Deploying ML Models via Momentum UI",
+        "Article_Num": 1,
+        "Article_Body": "Momentum provides a 1-click deployment of ML models to MLOps. Before deploying a model to MLOps, make sure that Momentum is properly configured to locate the MLOps deployment. \nCheck Settings and Configuration and ensure the following properties are configured correctly: \n[Parameters: Example Values - Explanation\nMLOPS_URL: https://host1.momentum.local:9443 - Use internal hostname or IP and not public domain/IP. Contact your admin to obtain the hostname where MLOps is hosted. Momentum internally communicates with MLOps using this host and port and therefore for security reason, use an internal host:port.\nMLOPS_PUBLIC_URL: http://<public-ip-or-domain>:9443 - This is public hostname and port to access the MLOps UI and securely login to access its services.\nMLOPS_TOKEN: See the MLOps Token How-tos - This is a security token that is used to communicate with MLOps for security.\nMLOPS_CLUSTER: default_cluster - MLOps can seamlessly deploy models in various environment such as QA, sandbox, staging, production that may be either local server, Azure, AWS or any other cloud service providers. The default_cluster means the model will be hosted within the same machine where MLOps is deployed."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/deploying-ml-models-via-mlops-ui/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Deploying ML Models via MLOps UI",
+        "Article_Num": 2,
+        "Article_Body": "Login to MLOps web interface and follow the steps to deploy a model to MLOps: \n\nFrom the left menu panel, click \u201cDeploy\u201d option \n\n\nFill out the form. \n\n\nModel Name: Give a meaningful name of the model \n\n\nSelect Model Category: Select from the dropdown the type of model you are deploying. \n\n\nPurpose (optional): Give a short description and reason why you are deploying this model \n\n\nBusiness Description (optional): Give a business description about the usage of the model \n\n\nAuthor: by default, the logged in user\u2019s id is pre-filled. However, if the author of the model is someone else in the organization, provide that user\u2019s id. \n\n\nSelect Cluster Id: Select the cluster where the model needs to be deployed. Depending on your organization\u2019s deployment, the option may vary. Selecting \u201cdefault_cluster\u201d means, the model will be deployed within the same machine where the MLOps is deployed. \n\n\nChoose File: Browse to the location in your machine where the model file is located and select the model to upload. The supported file formats are: \n\n\n.xml for PMML compliant models \n\n\n.onnx for ONNX compliant models \n\n\n.zip for TensorFlow models (make sure all the model artifacts are included and packages as a zip file). \n\n\nClick \u201cDeploy\u201d button. \n\n\nIf everything goes well, you should see the metadata of the model with the \u201csuccess\u201d confirmation."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/deploying-ml-models-via-restful-api/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Deploying ML Models via Restful API",
+        "Article_Num": 3,
+        "Article_Body": "ML models can be deployed programmatically using the Restful API. The Restful API details are also available on the \u201cDeploy\u201d page of MLOps. To see the API details for model deployment, click the \u201cDeploy\u201d menu option and scroll down to the bottom of the page to see the CuRL command and python code. \nUsing the command line or CURL: \ncurl -X PUT -H \u2018Content-Type:multipart/form-data\u2019 -H \u2018Authorization: Token 1234567890987654321\u2019 -F \u2018model_file=@myfile.xml\u2019 http://one.accure.ai:443/mlops/v1/model_upload/model_name/cluster_id/model_category \nUsing Python code: \nurl = http://one.accure.ai:443/mlops/v1/model_upload/model_name/cluster_id/model_category \nheaders = {\u201cAuthorization\u201d: \u201cToken 1234567890987654321\u201d} \nfiles = {\u201cmodel_file\u201d: open(r\u201dmyfile.xml\u201d, \u201crb\u201d)} \nr = requests.put(url=url, headers=headers, files=files) \nprint(r.json()) \nReplace the token with the real security token. \nReplace the \u201cmyfile.xml\u201d by the model file path. \nReplace the URL with your MLOps deployed domain and port. \nmodel_name: replace with the model name you are deploying \ncluster_id: Use appropriate cluster_id (default_cluster by default) \nmodel_category: Depending on the category of the model you are deploying. The supported categories are: \nclassificateion \nclustering \nimage_classification \nobject_detection \nnlp \nregression"
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/model-registry/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Model Registry",
+        "Article_Num": 4,
+        "Article_Body": "MLOps maintains a list of all deployed models with their corresponding versions in the form a registry, called Model Registry. \nAfter signing in to MLOps, it lands to the model registry page by default. To navigate back to the registry, click on \u201cModel Registry\u201d menu option. \nThe model registry also shows the \u201ccluster_id\u201d where the model is deployed, the model algorithm name, prediction function, publication date and the author of the model."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/model-exploration/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Model Exploration",
+        "Article_Num": 5,
+        "Article_Body": "To explore the model and view its metadata: \n\nFrom the model registry page, click the Model Artifact icon, , corresponding to the model you wish to explore. \n\n\nThe next page displays the model metadata. \n\n\nThe model metadata page also shows, depending on the model type, the following: \n\n\nModel Upload API to upload a new version of the model programmatically \n\n\nModel Artifact API to retrieve the model metadata programmatically \n\n\nModel Prediction API to predict from this model by passing the input data to it."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/feature-store/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Feature Store",
+        "Article_Num": 6,
+        "Article_Body": "Feature Store is a central repository to store the feature data used in training the ML models. After the model is deployed to MLOps, the training set and test sets must be uploaded for auditing, model recreation, audit compliance, and other regulatory and business requirements. \nIn addition, the training and test sets must be uploaded to the Feature Store for Data Drift Detection and Model Performance Report. \nTo upload the training and test sets to Feature Store: \n\nIf you are on the Model registry page, click the icon corresponding to a model for which the data needs to be uploaded to Feature Store. \n\n\nIf you are already on the model Artifact or Metadata page, you will see a Feature Store link at the top menu bar. Clicking the Feature Store icon or menu item will bring the Feature Store page. \n\nOn the Feature Store page: \n\n\nDataset: select either training or test set to upload the relevant dataset \n\n\nFile Type: Select the file format (json, parquet, or csv) \n\n\nBrowse to the data file to your local computer and upload by clicking the Submit button. \n\n\nIf you deployed model directly from Momentum to MLOps, make sure to download the training and test sets from Momentum and upload to Feature Store. \n\n\nTo download the training or test sets, login to Momentum \n\n\nGo to Data Upload and Exploration section \n\n\nSelect the training or test sets you used in the model \n\n\nClick the Download menu item located at the top menu bar. \n\n\nThe downloaded file will be a zipped file. Unzip it. You may have multiple files within the zipped file. Make sure to upload all of the training or test files one by one. \n\n\nIf you deployed a third-party model (not from Momentum), make sure to acquire the training and test sets in one of the supported file formats, and the upload to the Feature Store. \n\n\nYou can also upload the training and test sets to MLOps via Restful API. The API specification, with a sample Python code, is provided on the Feature Store page. Here is a sample CURL command to upload data to Feature Store via Rest API: \n\ncurl -X PUT -H \u2018Content-Type:multipart/form-data\u2019 -H \u2018Authorization: Token 1234567890987654321\u2018 -F \u2018data_file=@myfile.csv\u2018 http://one.accure.ai:443/mlops/v1/upload_dataset/LSTM_Test_Model/2/default_cluster/dataset_category/file_type \nImport Note: For Regression models, the training and test sets must have the target field labeled as \u201ctarget\u201d even if the model was trained with a different column name of the target field. This is likely to change in the future but for now, rename your label field before uploading to Feature Store. You do not need to change anything in your model, Just the training and test datasets."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/model-management/sharing-model/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Section_Num": 2,
+        "Article_Title": "Sharing Model",
+        "Article_Num": 7,
+        "Article_Body": "Model can be shared with other users within the same organization. Only the admin and model owners can share their models with other users. See the \u201cUser and Role Management\u201d section for details on the roles and privileges. \nTo share a model: \n\nIf you are on the Model Registry page, click on the sharing icon corresponding to the model you want to share. \n\n\nThis will launch a modal window. Search the user you want to share this model with. \n\n\nClick on the icon corresponding to the user you want to share this model with. \n\n\nUnshare or Revoke Access to Model \n \nAlso see \u201cModel Access Management\u201d user the section \u201cUser and Role Management\u201d."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/monitoring/model-operation-monitoring/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Monitoring",
+        "Section_Num": 3,
+        "Article_Title": "Model Operation Monitoring",
+        "Article_Num": 1,
+        "Article_Body": "To monitor the model operations: \n\nIf you are on the Model registry page, click the icon to open the Model Ops page. \n\n\nIf you are on the model metadata or artifact page, click on the \u201cModel Ops\u201d menu item from the top menu bar. \n\n\nThe Model Ops shows: \n\n\nTotal Requests: this indicates the number of API calls \n\n\nTotal Predictions: Number of predictions done by the model. Each API call may send multiple input sets. Predictions are done for each input and hence this shows the number of predictions made by the model for all the inputs received. \n\n\nMedian Response Time (ms) Per Request: As the name suggests, this is an aggregate median time of all the requests processed by the API. \n\n\nData Error Rate: Any error detected due to data issues, such as incorrect column types, missing or null, the API will record that as errors. The error rate is calculated by the diving the data related error count by the total number of API requests received. \n\n\nSystem Error Rate: This error rate indicates the error due to any system related issues, such as the serving node being down, network issues, or other system related issue not related to the data. \n\n\nConsumers: This indicates the number of API consumers. \n\n\nData Error Per Day: This shows a daily trend of error rates. \n\n\nThe Model Ops report is specific to a particular model. \n\n\nThe aggregation is done over a week worth of data and older data are removed to save on disk space. This behavior may be configured from the backend."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/monitoring/model-performance-report/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Monitoring",
+        "Section_Num": 3,
+        "Article_Title": "Model Performance Report\u00a0",
+        "Article_Num": 2,
+        "Article_Body": "To monitor the model performance: \n\nClick \u201cModel Stats\u201d from the top menu bar from the model metadata page. \n\n\nClick \u201cModel Performance Report\u201d from the secondary top menu bar. \n\n\nDepending on the model type, the performance report shows metrics suitable for that model type. The Model Performance Report gives information about the name of the model along with the version number, reference, and the current model quality, which shows error metrics such as the Mean Error, Mean Absolute Error and Mean Absolute Percentage Error. Along with that, it also shows Residual plots for the referenced and current models."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/monitoring/data-drift-report/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Monitoring",
+        "Section_Num": 3,
+        "Article_Title": "Data Drift Report\u00a0",
+        "Article_Num": 3,
+        "Article_Body": "The data drift detection is a way to evaluate whether the new incoming data is drifted from the data that was used in the model training. MLOps monitors for drift of every feature \u2013 both numerical and categorical features \u2013 and report them as graphs."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/governance/user-and-role-management/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Section_Num": 4,
+        "Article_Title": "User and Role Management",
+        "Article_Num": 1,
+        "Article_Body": "You must have an administrative role for manage users and roles within your organization. The user must have an administrative role to manage users and roles within the organization. You can have different user groups and privilege mappings for each group."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/governance/add-user/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Section_Num": 4,
+        "Article_Title": "Add User",
+        "Article_Num": 2,
+        "Article_Body": "Expand Users and Roles from the left menu panel. \n\n\nClick Manage Users. This opens the user management page. \n\n\nClick \u201cAdd User\u201d located at the top menu bar. \n\n\nFill out the form and select the appropriate role. \n\n\nSave to add this user."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/governance/edit-or-delete-user/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Section_Num": 4,
+        "Article_Title": "Edit or Delete User",
+        "Article_Num": 3,
+        "Article_Body": "Expand Users and Roles from the left menu panel. \n\n\nClick Manage Users. This opens the user management page. \n\n\nClick the pencil icon corresponding to the user you want to edit or delete. \n\n\nEdit the user information and click the \u201cUpdate\u201d button. \n\n\nTo delete a user, select the \u201cUser Status\u201d as \u201cinactive\u201d and click \u201cUpdate\u201d button. \n\n\nTo update the user\u2019s role, select the appropriate role from the \u201cUser Group\u201d dropdown, and click \u201cUpdate\u201d button."
+    },
+    {
+        "URL": "https://accure.ai/docs/mlops/governance/model-access-management/",
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Section_Num": 4,
+        "Article_Title": "Model Access Management",
+        "Article_Num": 4,
+        "Article_Body": "Expand Users and Roles from the left menu panel. \n\n\nExpand Model Access, and click either Model View or User View \n\n\nModel View shows a list of models and users who have access to these models \n\n\nUser View shows a list of users and all the models they have access to. \n\n\nOn the next modal window, search the user you want to give access to this model. \n\n\nClick the corresponding to the user to grant access to the model. \n\n\nTo revoke access to the model, click the delete icon corresponding to the user who already have access to this model. \n\n\nIf you want to manage model access of a specific user, switch to \u201cUser View\u201d \n\n\nClick the icon corresponding to the user you want to manage the access for. \n\n\nIn the next modal window, search the model you want to grant this user access to and the click on the plus icon. \n\n\nIf you want to revoke this user\u2019s access to a particular model that this user already have access to, click on the delete icon corresponding to the model."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/about-impulse/about-impulse/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "About Impulse",
+        "Section_Num": 1,
+        "Article_Title": "About Impulse",
+        "Article_Num": 1,
+        "Article_Body": "Impulse DW is a blazing fast and highly scalable SQL based data warehouse platform. It offers the following features:\nBlazing fast and scalable database for ad hoc analytics and online analytical processing (OLAP)A fully integrated ETL platform to ingest data from a wide variety of data sources and formats, transform, and build an automated data pipeline to load and index data for interactive and ad hoc query.Fully integrated web-based visualization and BI engine to create interactive dashboards.JDBC and Restful APIs are available to connect with third party BI tools.The Restful API specification is available here: Restful API Specification"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/registration-and-account-management/1-1-signup/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Registration and Account Management",
+        "Section_Num": 2,
+        "Article_Title": "Signup",
+        "Article_Num": 1,
+        "Article_Body": "To register a user:\nIn your browser window, type the URL and port number of Impulse server. The URL will vary for every installed instance of Impulse. If this is the first time after the system is installed, you may be able to open the login page by pointing your browser to http://<youripaddress>:433 (replace <youripaddress> with the actual IP address of the impulse server.On the login page, click \u201cSign up\u201d link, fill out the registration form an click submit.\nImport notes:\nThe first time user who registers using the above method becomes the default administrator of the system.An admin has all the privileges systemwide.An admin can not delete itself or change its role. If, during the installation process, impulse is configured to integrate with Momentum and Momentum is deployed within the Impulse cluster, the same user becomes the admin of Momentum as well.\nThe following depicts the registration form."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/registration-and-account-management/1-2-password-change/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Registration and Account Management",
+        "Section_Num": 2,
+        "Article_Title": "Password Change",
+        "Article_Num": 2,
+        "Article_Body": "To change password:\nFrom the main navigation menu, expand \u201cUsers and Roles\u201d and click on \u201cProfile and Password\u201dThe top of the page contains the form to change password.Provide your old and new passwords you want to set to.Click Change Password.\nNote: You will not need to fill out the lower section of the form (profile section) to change the password."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/registration-and-account-management/1-3-profile-management/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Registration and Account Management",
+        "Section_Num": 2,
+        "Article_Title": "Profile Management",
+        "Article_Num": 3,
+        "Article_Body": "To change your profile information:\nLeft navigation menu \u2013> expand Users and Roles \u2013> Click Profile & Password \u2013> Edit the profile section of the form. You will not need to update the password \u2013> Update Profile button"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/registration-and-account-management/1-4-forgot-password/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Registration and Account Management",
+        "Section_Num": 2,
+        "Article_Title": "Forgot Password",
+        "Article_Num": 4,
+        "Article_Body": "To reset your password:\nClick Forgot Password link from the login pageProvide with the email address associated with the impulse accountAn email link to reset the password will be sent your email address.Click on the link sent via email.Provide the new passwords and submit. \nNote: You must set SMTP settings before the system can send emails. See System Configuration to learn how to set SMTP."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-1-create-a-warehouse/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Create a Warehouse",
+        "Article_Num": 1,
+        "Article_Body": "Data warehouse (or DW for short) is a collection of logically related tables or data sources. You create a DW to organize tables within it. \nTo create a new data warehouse:\nOn the main navigation menu, click \u201cData Warehouses\u201d. Click on the + icon located at the top left corner of the page Fill out the form:Warehouse Name: This is a user defined name to recognize this warehouseWarehouse Alias: This is short name or code given by user to this warehouse. Ensure there is no space or special characters in the warehouse alias. All tables are referenced using the warehouse alias. For example, if the alias is \u201cpatientdw\u201d and there are two tables \u2014 patient and schedule \u2014 within this warehouse, the tables are uniquely identified using the alias as patientdw.patient, and patientdw.schedule.Description: User defined description or purpose of this warehouse.Submit to create the DW."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-2-edit-warehouse/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Edit Warehouse",
+        "Article_Num": 2,
+        "Article_Body": "To edit a warehouse:\nFrom the left navigation menu, click \u201cData Warehouses\u201dClick the \u201cEdit\u201d link corresponding to the warehouse you wish to edit.Update the fields that you wish you edit and click Submit to save the updated information."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-3-datasources-in-warehouse/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Datasources In Warehouse",
+        "Article_Num": 3,
+        "Article_Body": "We organize tables or data sources within a data warehouse. To see a list of data sources within a DW:\nOn the main navigation menu, click Data WarehousesClick the link \u201cDatasources\u201d corresponding to the DW you are interested inThe next page will show a list of all data sources within the DW.\nWith each datasources, it shows the following important information about the datasource:\nPartition Count: This shows the number of partitions this data source is split into.Partition size: Total size in bytes of all partitions combined. Dividing this number by the number of partitions will give the average partition size in bytes.Replication size: For multi-node replicated cluster, this will show the total partition size of all replicated data/partitions. For a single node cluster, the replication size will be the same as the partition size.Available %: This is shows the percentage of partitions available for querying. Ideally this should be 100%.\nIt is important to note that after your upload and index the data, the data will not be available for querying until this available percentage is not 100%."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-4-ingesting-data-into-tables-or-datasources/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Ingesting Data Into Tables or Datasources",
+        "Article_Num": 4,
+        "Article_Body": "There are three different ways to create table or datasource in a data warehouse. These methods are described in the following sections:\nFile upload using drag-and-drop via Impulse UIIngest from external file systems such as S3, Hadoop and MomentumIngest using Momentum Data Pipeline\nPlease note that, in this document, we use \u201ctable\u201d and \u201cdatasource\u201d interchangeably."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-4-1-ingesting-from-momentum-data-pipeline/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Ingesting From Momentum Data Pipeline",
+        "Article_Num": 5,
+        "Article_Body": "To ingest data into Impulse DW:\nCreate an Impulse emitter. See instructions here.Add the Impulse emitter to the end of a data pipeline. See instructions here.Run the data pipelineMonitor the pipeline status from the Pipeline Home page. As a pipeline component runs, the status of that component is shown as \u201cRunning\u201d on the pipeline home.After all components of pipeline complete the execution, you will notice the status \u201ccomplete\u201d and the result \u201csuccess\u201d Open the Impulse DW UI \u2013> click \u201cTasks\u201d from the main menu options to monitor the indexing tasks with their completion statues. After all the indexing tasks are completed, your new index will be visible under the \u201cData Warehouses\u201d tab on Impulse."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-4-2-uploading-file-using-impulse-ui/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Uploading File Using Impulse UI",
+        "Article_Num": 6,
+        "Article_Body": "Impulse provides a convenient way to create a table and upload data to it. Data uploaded to impulse is partitioned and indexed for efficient query. This section describes how to upload data into a table using Impulse\u2019s file upload mechanism.\nStep 1: Upload Data\nFrom the main navigation menu, click \u201cLoad Data\u201dDrag and drop as many files as you want to upload to a table. You may browse and upload files as well. Fill out the form: Warehouse: from the drop down, select the data warehouse in which you wish to create the table.Datasource: Give a meaningful name to your datasource. The datasource is analogous to a table in RDBMS paradigm. If the table name within the selected warehouse exists, the data will be uploaded in the existing table, else a new table will be created.Input Source: Since we are uploading, leave the default selection as \u201cBrowse & Upload\u201d. For other types of input source, see the appropriate sections of this document.File Format: Select the appropriate file format of the data file you are uploading. The supported file formats are:ParquetCSV or comma separated valuesTSV or tab separated valuesPSV or pipe separated valuesJSON (line delimited) meaning each line in the file represents a single rowInput Header: This field is optional. If your input file is delimited (csv, psv, tsv) and does not contain the field header as the first line in each uploaded file, provide a comma separated list of header. Leave this field empty if your input file contains the header, otherwise, the ingestion engine will try to ingest the first line as data and not as header.Click Next button to configure the indexing and partitioning of data for efficient query execution.\nStep 2: Column Mapping and Partition Parameters\nAfter clicking the \u201cNext\u201d button in step 1, the next page will shows the parameters for the step 2 These parameters control how the data indexing and partitions will be created. The description of each field within this step is as follows:\n**For the best result, use a date or time based column as the primary partition column. If none of the column can be parsed as a date/time, do not use any partition.**\nDatasource: the table name (as set in step 1 above)Secondary Partition Strategy: This defines the column or columns that will be used to create the secondary partition. Impulse supports two types of secondary partition strategies:Dynamic: This is the best partition strategy and does the most efficient partitioning based on the data. In most cases, you will leave this as the default secondary partition strategy.Single Column: If your data will have only one column in the group by or where clause, this single column based strategy will likely to work the best. However, this is highly discouraged to use a single column based partitioning.Primary Partition Granularity: If you have a date/time based primary column, this parameter specifies how your data will be split into partitions. For example, if you select a \u201cday\u201d for the granularity level, the entire data will be grouped by day and split into partitions.Missing Datetime Placeholder: If you select a date/time based column as the primary partition column and if any of the rows contains invalid/missing/null values for the primary partition column, it will fill the missing value with this placeholder datetime.Max Parallel Upload Tasks: This parameter defines how many threads the system will create to upload the data in parallel. For a single node deployment, this should be set at maximum of 60% of number of available CPU cores in your server. For example, if you have 32-core CPU, set the max parallel tasks as 20 or less. For a distributed cluster nodes, this value should be 60% of the sum of cores of all worker nodes.Upload Mode: Specify whether you want to append rows to and existing table or overwrite existing partition.\nField Mapping: System will try to guess the datatypes of each column. In case of incorrect interpretation, you should edit the datatypes of every column that were incorrectly interpreted. Only the \u201cSTRING\u201d \u201cLONG\u201d and \u201cDOUBLE\u201d datatypes are supported. Dates are represented as a STRING datatype.\nFrom the field mapping section, select the primary partition column, preferably a datetime column.\nyou must specify the datetime format of the primary partition column. ISO date format and joda-time datetime ( https://www.joda.org/joda-time/key_format.html ) format are supported.\nIf your secondary partition strategy is \u201cSingle Column\u201d based, you must select the secondary partition column.\nAt the bottom of the page, the system displays a few lines of actual data to help you to see the datatype, format and sample values of the actual dataset.\nTo start indexing, click the \u201cLoad and Index\u201d button.\nThis will open the \u201cTasks\u201d page that shows a list of all active or completed indexing tasks."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-4-3-ingesting-from-external-file-storage-system/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Ingesting From External File/Storage System",
+        "Article_Num": 7,
+        "Article_Body": "Impulse supports ingesting data from the following external file systems:\nAmazon S3: Ingest a file of files stored in S3 bucket. This is the default storage system if Impulse is running on Amazon EC2 or you purchased the impulse license from the AWS Marketplace.HDFS: Ingest file or files stored in Hadoop Distributed File System (HDFS)Momentum: Ingest data from Momentum storage. Momentum provides a highly scalable ETL, including data ingestion from a wide variety of sources, transformation, cleaning, blending, and merging with multiple sources. It also allows ingesting data in automated fashion and creating indexes in Impulse.Google Cloud Storage: This is the default storage system if Impulse is running on Google Cloud.\nTo ingest data from the external system, follow these steps:\nFrom the main navigation menu, click \u201cLoad Data\u201d Fill out the form:Warehouse: Select the warehouse from the drop down optionsDatasource: Enter the table or datasource name.Input Source: Select the external system to ingest data from.Input Path: Provide the fully qualified path to the data directory or a single file. For example:Momentum: fully qualified component name, e.g. accure.tr.sampledataS3: absolute path of the file or directory, e.g. s3://mybucket/mydirGCS: absolute path of the file or directory, e.g. gs://mybucket/mydirHDFS: absolute path of the file or directory, e.g. hdfs://ip-address:port/directory/pathFile Format: Select the input file formatInput Header: Enter a comma separated list of header columns if the input format is CSV, TSV or PSV and the input files do not contain the header in the first line.Click Next and follow the Step 2 as described in the previous section Uploading File Using Impulse UI"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-5-add-data-to-existing-tables/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Add Data to Existing Tables",
+        "Article_Num": 8,
+        "Article_Body": "To add data to existing an table:\nFrom main navigation menu, click Data Warehouses Click the \u201cDatasources\u201d link corresponding to the warehouse that contains the table you want to upload data to Click the upload icon corresponding to the table name In the next page, you will notice that both the warehouse and table names are pre-populated. Follow the rest of the steps to upload and index data as described in the section Uploading File Using Impulse UI"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-5-1-update-existing-index/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Update Existing Index",
+        "Article_Num": 9,
+        "Article_Body": "Impulse does not support row level updates. You can overwrite partitions within a specific data range and add new data to existing index. Here is an example of how this works:\nAssume you have an existing index in Impulse with the following rows:\nDateEmployeeSalary2019-01-01John60002019-01-02Sara61002019-01-03Smith62002019-01-04Bob6300\nIf we have the following dataset that we want to append to existing index and update the existing partitions within the period 2019-01-01 and 2019-01-03:\nDateEmployeeSalary2019-01-01Jessica70002019-01-02Sara71002019-01-03Simpson72002019-01-04Robert73002019-01-05Dave7400\nThe resultant data after the combine and overwrite of partitions within the period 2019-01-01 and 2019-01-03 will be:\nDateEmployeeSalary2019-01-01John70002019-01-01Jessica70002019-01-02Sara71002019-01-03Simpson72002019-01-04Bob63002019-01-04Robert73002019-01-05Dave7400\nNotice that the partitions within the date range 2019-01-01 and 2019-01-03 are replaced by the the new dataset and outside this date range the data are appended to existing index.\nHere are the steps to combine and overwrite the existing partitions.\nFollow the steps of ingesting files to a datasource in a warehouseIn the step 2, select the Upload Mode as \u201cCombine & Overwrite: Combine old data with new data and overwrite\u201d option from the dropdown list In the partition overwrite period from and to fields, fill out the data range that you want your new data to update to.Follow the remaining steps of ingesting data into Impulse."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-6-delete-table-records-rows/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Delete Table Records (Rows)",
+        "Article_Num": 10,
+        "Article_Body": "Impulse data structure is optimized for efficient query execution. The index structure within Impulse makes it hard to delete a specific record or a group of records. Impulse provides a mechanism to delete table records using \u201cDelete\u201d statement as described below.\nIt is important to note that the delete operation is very expensive \u2014 it reindexes the entire datasource/table and, therefore, it is likely to take time and resources.\nNOTE: Do not ingest any data to the same table from where the records are being deleted, until the delete operation is completed. Ingesting data while delete operation is still on will cause the data loss (of the new data being ingested).\nTo delete a row or set of rows matching a criteria, write the following query in the SQL statement field and click run.\nDELETE FROM \"DW_ALIAS.TABLENAME\" WHERE RecordDate BETWEEN '2000-01-01' AND '2021-12-31'\n\nThe where clause supports the following operators:\nAND\nOR\nBETWEEN\nThe following conditional operators are supported:\nOperator : Condition\n== : equal to\n!= : not equal to\n> : greater than\n>= : greater than or equal to\n< : less than\n<= : less than or equal to"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-7-delete-tables-or-datasources/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Delete Tables or Datasources",
+        "Article_Num": 11,
+        "Article_Body": "To delete a table, including all its data:\nFrom the main navigation menu, click \u201cData Warehouses\u201dClick \u201cDatasources\u201d corresponding to the warehouse that contains the table you want to deleteClick on the trashcan icon corresponding to the table (See \n**Note that this is an irreversible process and the deleted data can not be recovered.**"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-8-monitoring-indexing-tasks/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "Monitoring Indexing Tasks",
+        "Article_Num": 12,
+        "Article_Body": "To monitor the status of indexing tasks:\nClick Tasks from the main navigation menuThe next screen will show you a list of tasks with their statuses \u2014 RUNNING, SUCCESS, FAILURE \nAn indexing task creates several sub-tasks depending on the data size and the number of partition splits. \nYou may notice concurrently running multiple sub-tasks, depending on the max parallel tasks setting during the ingestion configuration."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/2-warehouse-management/2-9-view-datasource-stats/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Warehouse Management",
+        "Section_Num": 3,
+        "Article_Title": "View Datasource Stats",
+        "Article_Num": 13,
+        "Article_Body": "The partition stats shows the number of partitions created for a selected datasource. Here are the steps to visualize the partition stats:\nMain navigation menu \u2013> click Data Warehouses. This will shows a list of warehousesClick on the Datasources link corresponding to a warehouse. This will show all datasources within a warehouse.Corresponding to a datasource (or table name), click on the \u201cStats\u201d icon.\n\n\u2013 partition count over time, partition size over time and a detailed list of partitions."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/3-bi-integration/3-1-mvinsight-integration-with-impulse/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "BI Integration",
+        "Section_Num": 4,
+        "Article_Title": "MVInsight Integration with Impulse",
+        "Article_Num": 1,
+        "Article_Body": "A detailed tutorial will be added soon."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/3-bi-integration/3-2-tableau-integration-with-impulse/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "BI Integration",
+        "Section_Num": 4,
+        "Article_Title": "Tableau Integration with Impulse",
+        "Article_Num": 2,
+        "Article_Body": "Impulse is JDBC compliant. You can query Impulse DW using Avatica JDBC driver.\nTo query Impulse from Tableau:\nDownload the Avatica JDBC driver jar from Avatica JDBC driver from Maven RepositoryCopy the driver jar to Tableau\u2019s Drivers directory. The directory location depends on your operating system and location that you chose during the Tableau installation. For example, in Windows based system and Tableau Desktop, the default location may be C:\\Program Files\\Tableau\\Drivers.Restart Tableau.On Tableau Desktop, under \u201cTo a Server\u201d heading, click More and search for \u201cOther Databases (JDBC)\u201d Click \u201cOther Databases (JDBC)\u201d and enter the Impulse URL in this format jdbc:avatica:remote:url=http://impulse-ip:port/impulse/v2/sql/avatica/. The URL and port combination is the same as the URL you use to access Impulse web console. If you SSL is used to securely access Impulse, make sure to change the http to https for the URL scheme. Select SQL 92 Dialect from the dropdown. Provide the impulse authorized username and password and click Sign In button.From the list of databases, select \u201cimpulse\u201d database from the dropdown menu. Then select \u201cimpulse\u201d from the Schema menu. This should show a list of data warehouse tables.Drag the table/tables to the main body Tableau that says something \u201cDrag tables here\u201d to create your Tableau data source.\nConsult Tableau documentation for details on how to work with data sources and create dashboards."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-security-roles-and-privilege-management/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Security, Roles and Privilege Management",
+        "Article_Num": 1,
+        "Article_Body": "Momentum provides authentication, authorization and access control at very granular level. This section describes access control features of Impulse.\nUser Group\nUsers belong to one of the following groups:\nAs an Admin, you have access to create, edit, view details, add tables, load data, query, manage user, manage roles, monitor tasks, SQL, API:Query, System Config, System Services.\nAs a Reader, you have access to query, SQL, and API:Query.\nAs a Writer, you have access to create, edit, view details, add tables, load data, query, Monitor tasks, SQL, and API:Query.\nAs a ReaderWriter, you have access to create, edit, view details, add tables, load data, query, Manage Roles(owner DW only), Monitor tasks, SQL, and API:Query\n\nPermission Types\nEntire warehouse: all tables within warehouse accessibleTable or selected group of tables: only the included tables are accessible\nDefault role: <USER>_OWNER and assigned by default to the user who creates a warehouse\nEvents, Permissions, and Roles\nSystem automatically creates and delete roles when certain events are triggered.\nWhen a User signs up, 'The User Owner' role is auto created.\nWhen a Data Warehouse is created, ReadWrite permission is created and User Owner role is assigned.\nWhen a Data Warehouse is deleted, the Data Warehouse ReadWrite permission is removed.\nWhen we Delete a Table, the table ReadWrite permission is removed."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-1-enable-ssl/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Enable SSL",
+        "Article_Num": 2,
+        "Article_Body": "This section describes steps to secure the impulse access over SSL using https protocol. When you install Impulse the first time, the web console is accessible via http though on port 443. The port 443 is the default port for SSL but because there is no SSL certificate installed, the web console is served over http.\nTo enable SSL, you must have SSL certificate and key files for the domain you want to use to access the web console. The domain or subdomain must be pointed to the impulse IP address. See your domain provider\u2019s documentation on how to point a domain/subdomain to an IP address. \nThis tutorial assumes that you have a domain/subdomain and corresponding certificate and key files. Here are the steps:\nLogin using an admin account to Impulse web consoleFrom the main navigation, click on System Config In the next page, check the box for \u201cEnable SSL\u201d Browse and upload the certificate and key filesSave the config \nIf everything goes well, the next page shows a confirmation message and instructions to restart the web server.\nClick the \u201cRestart\u201d link to restart the server. (\nIt may take about a minute to restart the server. The page will reload and auto navigate to the login page."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-2-securing-backend-sql-engine/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Securing Backend SQL Engine",
+        "Article_Num": 3,
+        "Article_Body": "You must change the default impulse user and password for the security reason.\nYou must be an admin to perform the following steps:\nClick System Config from the main navigation menu. Locate the following fields and provide secured username and password. For security reason, both the user and password are never displayed. Make sure you key-in the username and password correctly.IMPULSE_DB_SYS_USER: a default admin user (do not use admin or sysadmin)IMPULSE_DB_SYS_PASS: enter a complex password that can not be gassed or be a victim of random attack.Save the configIn the next page, restart the web server.After the web console is reloaded (after the restart), stop and start the backend services. Click System Services and stop the following services one by one:impulse-httpimpulse-masterimpulse-workerStart the above three services one by one\nYour new username and password will apply to the backend SQL engine."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-3-sharing-and-access-control/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Sharing and Access Control",
+        "Article_Num": 4,
+        "Article_Body": "Follow the two-step process to share a warehouse or datasource with another user.\nStep 1: Create an access role to resources you want to share\nStep 2: Assign the role to a user"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-4-add-user/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Add User",
+        "Article_Num": 5,
+        "Article_Body": "To add a user and grant access to warehouses and tables, follow the steps:\nExpand Users and Roles from the main navigation menuClick Manage UsersClick the plus icon located at the top of the page Fill out the New User form, as described belowFirst Name: First name of the userLast Name: Last name of the userUsername: a unique username without any space or special characters. This should not be an email.Password: Give a default password that user must change on the first logonEmail: User email, must be unique email not used with any other userGroup: Select the user group. At the bottom of new user form, select the checkboxes corresponding to roles to assign one or more roles to this userClick Save"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-5-edit-user/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Edit User",
+        "Article_Num": 6,
+        "Article_Body": "This section describes how to edit user information, reset password, and assign/revoke access roles. You must be an admin to perform the following steps:\nMain navigation menu \u2013> Expand Users and Roles \u2013> Manage UsersClick Edit link located at the far right column of the user you want to editYou can update user information and save.\nReset User Password\nThere are two ways to reset user password:\nSend Password Reset Link: This is a secure way to send a link to user\u2019s email. The user should follow the link to change their password. This feature will work only if the email service (SMTP config) is configured.Generate Temp Password: This will create a random password that you can share with the user. User must change this password on the first login.\nAssign or Revoke Access Roles\nTo add additional roles to this user, check the boxes corresponding to the role/roles you want to assign to this user.To remove roles, uncheck the box you want to remove the roles from this user\u2019s access.Click Update button to save the changes."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-6-create-role/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Create Role",
+        "Article_Num": 7,
+        "Article_Body": "To create a role:\nExpand Users & Roles from the main navigation menuClick Manage Role On the next page click on the plus icon to create a new roleFill out the form to provide: Role Name: a short name to identify this roleRole Description: A descriptive name to indicate its purposeSelect the Read or/and Write checkboxes corresponding to a warehouse or one or more tables to define the access privilege under this new role.Save to create the role.\nNote: This role needs to be assigned to one or more users to grant access to resources to those users."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-7-delete-role/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Delete Role",
+        "Article_Num": 8,
+        "Article_Body": "You must have the appropriate privilege to delete a role. Perform the following:\nMain navigation menu \u2013> expand Users & Roles \u2013> Manage RolesOn the next page, click on the Delete link corresponding to the role you want to delete. A confirmation dialog will open to receive your confirmation on this delete operation. \nOnce you delete a role, all users having this role assigned to them will no longer have access to the resources assigned under this role."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-8-assign-role-to-user/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Assign Role to User",
+        "Article_Num": 9,
+        "Article_Body": "In order to grant access of resources (warehouse and tables) to a user, assign a role to the user. The following steps describe the process of assigning roles to a user. Before proceeding with the following ensure that you have already created roles.\nAssign Roles to a New User\nExpand Users and Roles from the main navigation menuClick Manage UsersClick the plus icon located at the top of the page. Fill out the New User form. At the bottom of new user form, select the checkboxes corresponding to roles to assign one or more roles to this user Click Save\nAssign Roles to an Existing User\nClick on the Edit link corresponding to the user you want to assign one or more roles toOn the next page, click checkboxes corresponding to one or more roles.If a role is already assigned to this user and you want to keep that role assigned, leave the checkbox checked. Else, uncheck the box.Click Save"
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/4-security-roles-and-privilege-management/4-9-edit-user-privilege/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Security, Roles and Privilege Management",
+        "Section_Num": 5,
+        "Article_Title": "Edit User Privilege",
+        "Article_Num": 10,
+        "Article_Body": "This section describes how to edit user information, reset password, and assign/revoke access roles. You must be an admin to perform the following steps:\nMain navigation menu \u2013> Expand Users and Roles \u2013> Manage UsersClick Edit link located at the far right column of the user you want to editYou can update user information and save.\nReset User Password\nThere are two ways to reset user password:\nSend Password Reset Link: This is a secure way to send a link to user\u2019s email. The user should follow the link to change their password. This feature will work only if the email service (SMTP config) is configured.Generate Temp Password: This will create a random password that you can share with the user. User must change this password on the first login.\nAssign or Revoke Access Roles\nTo add additional roles to this user, check the boxes corresponding to the role/roles you want to assign to this user.To remove roles, uncheck the box you want to remove the roles from this user\u2019s access.Click Update button to save the changes."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/5-system-administration/5-1-system-configuration/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "System Administration",
+        "Section_Num": 6,
+        "Article_Title": "System Configuration",
+        "Article_Num": 1,
+        "Article_Body": "You must be an admin to be able to update system configuration. Changes made to the system config requires the web sever and other services to restart. The following table shows what services need to be started based on what config parameters are changed.\nYou have to be an admin to change the system configuration of the Impulse EDW.\nFor enabling the SSL Access, HTTP(S), DB HOST, EMAIL HOST, EMAIL PORT, EMAIL HOST USER, EMAIL HOST PASSWORD, SENDER EMAIL, MOMENTUM INTEGRATION, MOMENTUM API URL, IMPULSE DB URL, IMPULSE INDEX DML URL, or IMPULSE AUTH URL, you need to restart the Web server service.\nFor enabling the IMPULSE DB SYS USER, IMPULSE DB SYS PASS, STORAGE TYPE, BUCKET, STORAGE PATH, AWS ACCESS KEY ID or AWS SECRET ACCESS KEY, you need to restart the services like Web Server, Impulse-http, Impulse Master, Impulse Worker."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/5-system-administration/5-2-managing-system-services/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "System Administration",
+        "Section_Num": 6,
+        "Article_Title": "Managing System Services",
+        "Article_Num": 2,
+        "Article_Body": "You must be an admin to perform the following operations to monitor system services and manage their running statuses.\nMain navigation menu \u2013> System ServicesYou will see all system services and their running statuses.Depending upon the status of a service, Start or Stop button will show enabled or disables. For example, if a service is up and running, the Start button will be disabled and the Stop button will be enabled.The Zookeeper (or zk) service is almost never needed to be stopped or restarted. However, if you see any zookeeper connectivity issue in the system logs, it may be a good idea to stop and start the zk service.Impulse-http, master and worker services need to be stopped and restarted only in case of any config change as described in the System Configuration sectionDo not stop the \u201cimpulseui\u201d service unless there is any emergency and service is totally unresponsive or if there is any error. Doing so will stop the web server and the web console will not be accessible. If that situation arises, you will need to reboot the machine (OS).\nIf due to any reason, the web console is inaccessible, reboot your server (OS level reboot). All services should come back up."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/6-impulse-dw-restful-api/6-impulse-dw-restful-api/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Impulse DW Restful API",
+        "Section_Num": 7,
+        "Article_Title": "Impulse DW Restful API",
+        "Article_Num": 1,
+        "Article_Body": "Impulse DW Restful API provides a set of functionality to ingest data into impulse and execute SQL statement to get resultset in various formats.\nTo use the API, you must obtain the API token for a secure connection."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/6-impulse-dw-restful-api/6-1-api-token/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Impulse DW Restful API",
+        "Section_Num": 7,
+        "Article_Title": "API Token",
+        "Article_Num": 2,
+        "Article_Body": "The API token is required for all API calls. To get the token:\nLogin to your account using the impulse web console.Left hand side menu option \u2013> click on \u201cAPIs\u201d linkKey-in your account password and click on \u201cReveal Key\u201d buttonCopy the API key that is displayed when the reveal button is clicked."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/6-impulse-dw-restful-api/6-2-api-reference/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Impulse DW Restful API",
+        "Section_Num": 7,
+        "Article_Title": "API Reference",
+        "Article_Num": 3,
+        "Article_Body": "Use Impulse DW Restful APIs to access data available in the data warehouse. The following section provides the service, request and response specification.\nFor the operation '/v1/sql/result': the request parameter is 'Request header' and Response is 'Authorization: Token <your api token>', the other request parameter is 'JSON formatted request body', the response specifications are \n{\u201csql\u201d:\u201dYour SQL statement\u201d,\u201dstart_index\u201d: [optional],\u201dend_index\u201d:[optional],\u201drow_limit\u201d:[optional, default=100],\u201dresult_format\u201d:[optional, supported formats: default=json, csv, html]}\nExceptions:{\u201cresult\u201d:\u201dNo result fetched\u201d,\u201dexception\u201d:<Exception message describing the reason>\u201d}\nExamples:\nExample1: curl -X POST https://impulsedw.accure.ai/v1/sql/result -H \u2018Authorization: Token 1234567890987654321\u2019 -d \u2018{\u201csql\u201d:\u201dselect * from \\\u201dtablename\\\u201d\u201d}\u2019\nThe above example will return 100 rows in JSON format\nExample 2: curl -X POST https://impulsedw.accure.ai/v1/sql/result -H \u2018Authorization: Token 1234567890987654321\u2019 -d \u2018{\u201csql\u201d:\u201dselect * from \\\u201dtablename\\\u201d, \u201crow_limit\u201d:1000, \u201cresult_format\u201d:\u201dcsv\u201d}\u2019\nThis will return 1000 rows in csv format\nExample 3: curl -X POST https://impulsedw.accure.ai/v1/sql/result -H \u2018Authorization: Token 1234567890987654321\u2019 -d \u2018{\u201csql\u201d:\u201dselect * from \\\u201dtablename\\\u201d, \u201cstart_index\u201d:100, \u201crow_limit\u201d:1000, \u201cresult_format\u201d:\u201dcsv\u201d}\u2019\nThis will return 1000 rows with off set = 100, in csv format\nNote: Your URL may be different from the URL used in this document. You will need to use the URL for your deployment."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/7-release-notes/7-release-notes/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Release Notes",
+        "Section_Num": 8,
+        "Article_Title": "Release Notes",
+        "Article_Num": 1,
+        "Article_Body": "Impulse is a column based database for fast query execution and analytics.\nThis section describes the new features, enhancements and bug fixes in the recent releases of Impulse.\nRelease date: December 10, 2021, version 2.2.19\nOverwrite existing data with new datasetUpdate partitions (overwrite with new dataset) within a date range or periodDelete data warehouseVisualize partitions statsSecurity enhancementBug fixes\nRelease date: November 21, 2021, version 2.1.19\nInset BI integrationSecurity enhancementBug fixes\nRelease date: Oct 20, 2021, version 2.0.19\nAmazon S3 integration as an ingestion sourceAmazon S3 integration as a primary source of backup, replication, and auto disaster recovery for impulse running on EC2Amazon AMI release for AWS marketplace\nRelease date: August 20, 2021, version 2.0.1\nSecurity enhancement and bug fixesSecurity upgrade by allowing users to refresh API keysSecurity enhancement by hiding the API key and displaying only on demand and user authentication.Support for checking whether system services are running. For admins only.Support to \u201cstop\u201d and \u201cstart\u201d of services from the UI. For admins only.Support for displaying system logs (tail top 100)\nRelease date: July 15, 2021, version 2.0.0\nSecurity enhancementEnhancement in role, permission and access controlSupport for more granular level (entire warehouse vs individual tables) sharing and provision for read or write or readwrite access levelIntegration with Momentum ETL to ingest data from wide variety of data sourcesIntegration with Momentum Pipeline to index data into Impulse by either on-demand or scheduled based automationRole based access control for ingestion from MomentumIntegration with MVInsight visualization for graphing and dashboard creationJDBC based integration with BI tools, such as Tableau, Qlik and moreRestful API for ad-hoc query. Parameterized Rest request to retrieve data in JSON or CSV formatSupport for export of data in CSV format right from the UI\nRelease date: March 15, 2021, version 1.6.0\nSupport for ad hoc query from the browser based interfaceSecurity enhancement to encrypt all system passwords and sensitive user informationSupport for user defined http and https portsSupport for uploading client specific SSL certificates and management from UI by admin usersSupport for UI based configuration management by admin users\nRelease date: January 15, 2021, version 1.5.0\nWeb based user interface for user registration, password and account managementUI for roles, permissions, and privilege managementUI to create data warehouse and organize data sources within warehousesUI for drag-n-drop to add data sourcesUI for ETL to upload file, define fields, and set partition columnsUI to manage data sourcesSupport for ANSI SQL to query data sources\nRelease date: March 11, 2020, version 1.0\nCreation of core engine for data ingestion, and partitioningCreation of clustering mechanism for scaling of data ingestionCreation of clustering mechanism for parallel and distributed query processing and result assemblySupport for Hadoop as a distributed file system for cluster based deployment."
+    },
+    {
+        "URL": "https://accure.ai/docs/impulse-edw/7-release-notes/7-1-open-source-software-components-and-libraries/",
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "Release Notes",
+        "Section_Num": 8,
+        "Article_Title": "Open Source Software Components and Libraries",
+        "Article_Num": 2,
+        "Article_Body": "Impulse includes a number of subcomponents, open source software, libraries and databases. The following section provides a list of dependencies and open source software included in Impulse:\nApache Hive: https://hive.apache.org/Apache Lucene: https://lucene.apache.org/Apache Calcite: https://calcite.apache.org/Apache Calcite Avatica: https://calcite.apache.org/avatica/Apache Curator: https://curator.apache.org/Apache Derby: http://db.apache.org/derby/Apache HttpClient: https://hc.apache.org/Apache HttpCore: https://hc.apache.org/Apache Log4j: https://logging.apache.org/log4j/2.x/Apache Maven: https://maven.apache.org/Apache Hadoop: https://hadoop.apache.org/Apache Zookeeper: https://zookeeper.apache.org/Apache DataSketches: https://datasketches.apache.org/Apache Avro: https://avro.apache.org/Apache Parquet: https://parquet.apache.org/Apache Directory: https://directory.apache.org/Apache Kafka: https://kafka.apache.org/Apache Velocity: https://velocity.apache.org/Apache commons: https://commons.apache.org/Modified version of Apache Druid: https://druid.apache.org/Apache ORC: https://orc.apache.org/Apache Ranger: https://ranger.apache.org/A modified version of the java-alphanum library, copyright Andrew Duffy: https://github.com/amjjd/java-alphanumA modified version of the Metamarkets java-util library, copyright Metamarkets Group Inc: https://github.com/metamx/java-utilA modified version of the CONCISE (COmpressed \u2018N\u2019 Composable Integer SEt) library, copyright Alessandro Colantonio: https://sourceforge.net/projects/concise/Guava: https://github.com/google/guavaNetflix Spectator, copyright Netflix, Inc. https://github.com/Netflix/spectatorApache Knox: https://knox.apache.org/pac4j: https://www.pac4j.org/AWS SDK for Java: https://aws.amazon.com/sdk-for-java/Esri Geometry API for Java: https://github.com/Esri/geometry-api-javaClassMate: https://mvnrepository.com/artifact/com.fasterxml/classmate/1.0.0Jackson: https://github.com/FasterXML/jacksonCaffeine: https://github.com/ben-manes/caffeineLMAX Disruptor: https://mvnrepository.com/artifact/com.lmax/disruptor/3.3.6LZF Compressor: https://github.com/ning/compressOpenCSV: http://opencsv.sourceforge.net/OkHttp: https://square.github.io/okhttp/Netty: https://netty.io/DropWizard Metrics Core: https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-core/4.0.0-alpha4Fastutil: https://fastutil.di.unimi.it/Joda-Time: https://www.joda.org/joda-time/Java Native Access (JNA): https://github.com/java-native-access/jnaPlexus Common Utilities: https://codehaus-plexus.github.io/plexus-utils/Hibernate: https://hibernate.org/SIGAR: https://mvnrepository.com/artifact/org.hyperic/sigar/1.6.5.132JBoss Logging: https://mvnrepository.com/artifact/org.jboss.logging/jboss-loggingJDBI: https://github.com/jdbi/jdbiMapDB: https://github.com/jankotek/mapdb/Objenesis: http://objenesis.org/RoaringBitmap: https://github.com/RoaringBitmap/RoaringBitmapGoogle APIs Client Library: https://developers.google.com/api-client-libraryKubernetes: https://kubernetes.io/Gson: https://github.com/google/gsonprotobuf: https://developers.google.com/protocol-buffers/docs/protoGoogle Compute Engine API: https://cloud.google.com/compute/docs/reference/rest/v1Microsoft Azure Storage Client SDK: https://docs.microsoft.com/en-us/java/api/overview/azure/storage?view=azure-java-stableSnappy Java: https://xerial.org/snappy-java/PostgresSQL: https://www.postgresql.org/Zstandard: http://facebook.github.io/zstd/ANTLR: https://www.antlr.org/Janino and Commons Compiler: https://janino-compiler.github.io/janino/ASM: https://asm.ow2.io/LevelDB JNI: https://github.com/fusesource/leveldbjniICU4J: https://mvnrepository.com/artifact/com.ibm.icu/icu4jSLF4J: http://www.slf4j.org/MurmurHash3: https://github.com/aappleby/smhasher\nPython Libraries Installed from PyPI (https://pypi.org/):\npandasasgirefautopep8djangopycodestylepytzsqlparseUnipathdj-database-urlpython-decouplegunicornwhitenoisedjongopydruidSQLAlchemy==1.4.23setuptools==57.0.0gunicorndjangorestframeworklog4mongodjango-ipwarepyarrowfsspecs3fspycryptoboto3pydoop"
+    },
+    {
+        "URL": "https://accure.ai/docs/inset-bi/getting-started-with-inset-bi/alerts-and-reports/?seq_no=2",
+        "Product_Title": "Inset BI",
+        "Section_Title": "Getting Started with Inset BI",
+        "Section_Num": 1,
+        "Article_Title": "Alerts and Reports",
+        "Article_Num": 1,
+        "Article_Body": "There is currently no information available on this topic. \nPlease contact Accure customer support for additional assistance."
+    },
+    {
+        "URL": "https://accure.ai/docs/inset-bi/2-connecting-to-databases/connecting-to-a-new-database/?seq_no=2",
+        "Product_Title": "Inset BI",
+        "Section_Title": "Connecting to Databases",
+        "Section_Num": 2,
+        "Article_Title": "Connecting to a new database\u00a0",
+        "Article_Num": 1,
+        "Article_Body": "First things first, we need to add the connection credentials to your database to be able to query and visualize data from it. If you\u2019re using Inset BI independently, you can skip this step because a Postgres database, named PostgreSQL, is included and pre-configured in Inset for you. \nUnder the Data menu, select the Databases option: \n\nNext, click the green + Database button in the top right corner: \n\nYou can configure a number of advanced options in this window, but for this walkthrough you only need to specify two things (the database name and SQLAlchemy/Impulse DW URI): \n\n\nThe Impulse DW URL format should be in the format: impulse://username:password@hostname:port/impulse/v2/sql \nClick the Test Connection button to confirm things work end to end. If the connection looks good, save the configuration by clicking the Finish button in the bottom right corner of the modal window. \nCongratulations, you\u2019ve just added Impulse DW data source in Inset BI."
+    },
+    {
+        "URL": "https://accure.ai/docs/inset-bi/visualizing-data/registering-a-new-table/?seq_no=2",
+        "Product_Title": "Inset BI",
+        "Section_Title": "Visualizing Data",
+        "Section_Num": 3,
+        "Article_Title": "Registering a new table",
+        "Article_Num": 1,
+        "Article_Body": "Registering a new table \nNow that you\u2019ve configured a data source, you can select specific tables (called Datasets in Inset) that you want exposed in Inset for querying. \nNavigate to Data \u2023 Datasets and select the + Dataset button in the top right corner. \n\nA modal window should pop up in front of you. Select your Database, Schema, and Table using the drop downs that appear. In the following example, we register the Vehicle Sales table from the examples(postgresql) database. \n\nTo finish, click the Add button in the bottom right corner. You should now see your dataset in the list of datasets. \nCustomizing column properties \nNow that you\u2019ve registered your dataset, you can configure column properties for how the column should be treated in the Explore workflow: \n\nIs the column temporal? (Should it be used for slicing & dicing in time series charts?) \n\n\nShould the column be filterable? \nIs the column dimensional? \nIf it\u2019s a datetime column, how should Inset parse the datetime format? (Using the ISO-8601 string pattern) \n\n\nInset Semantic Layer \nInset has a thin semantic layer that adds many quality-of-life improvements for data scientists and analysts. The Inset semantic layer can store 2 types of computed data: \n\nVirtual metrics: you can write SQL queries that aggregate values from multiple column (e.g. SUM(recovered) / SUM(confirmed)) and make them available as columns for (e.g. recovery_rate) visualization in Explore. Aggregate functions are allowed and encouraged for metrics. \n\n\nYou can also certify metrics if you\u2019d like for your team in this view. \n\nVirtual calculated columns: you can write SQL queries that customize the appearance and behavior of a specific column (e.g. CAST(recovery_rate) as float). Aggregate functions aren\u2019t allowed in calculated columns."
+    },
+    {
+        "URL": "https://accure.ai/docs/inset-bi/visualizing-data/creating-charts-in-explore-view/?seq_no=2",
+        "Product_Title": "Inset BI",
+        "Section_Title": "Visualizing Data",
+        "Section_Num": 3,
+        "Article_Title": "Creating charts in Explore view",
+        "Article_Num": 2,
+        "Article_Body": "Inset has 2 main interfaces for exploring data: \n\nExplore: no-code viz builder. Select your dataset, select the chart, customize the appearance, and publish. \nSQL Lab: SQL IDE for cleaning, joining, and preparing data for Explore workflow \n\nWe\u2019ll focus on the Explore view for creating charts right now. To start the Explore workflow from the Datasets tab, start by clicking the name of the dataset that will be powering your chart. \n\nYou\u2019re now presented with a powerful workflow for exploring data and iterating on charts. \n\nThe Dataset view on the left-hand side has a list of columns and metrics, scoped to the current dataset you selected. \nThe Data preview below the chart area also gives you helpful data context. \n\n\nUsing the Data tab and Customize tabs, you can change the visualization type, select the temporal column, select the metric to group by, and customize the aesthetics of the chart. \n\nAs you customize your chart using drop-down menus, make sure to click the Run button to get visual feedback. \nIn the following screenshot, we craft a grouped Time-series Bar Chart to visualize our quarterly sales data by product line just be clicking options in drop-down menus. \n\nCreating a slice and dashboard \nTo save your chart, first click the Save button. You can either: \n\nSave your chart and add it to an existing dashboard \nSave your chart and add it to a new dashboard \n\nIn the following screenshot, we save the chart to a new \u201cSales Dashboard\u201d: \n\nTo publish, click Save and go to Dashboard. \nBehind the scenes, Inset will create a slice and store all the information needed to create your chart in its thin data layer (the query, chart type, options selected, name, etc). \n\nTo resize the chart, start by clicking the pencil button in the top right corner. \n\nThen, click and drag the bottom right corner of the chart until the chart layout snaps into a position you like onto the underlying grid. \n\nClick Save to persist the changes. \nCongrats! You\u2019ve successfully linked, analyzed, and visualized data in Inset BI. There are a wealth of other table configuration and visualization options, so please start exploring and creating slices and dashboards of your own"
+    },
+    {
+        "URL": "https://accure.ai/docs/inset-bi/visualizing-data/manage-access-to-dashboards/?seq_no=2",
+        "Product_Title": "Inset BI",
+        "Section_Title": "Visualizing Data",
+        "Section_Num": 3,
+        "Article_Title": "Manage access to Dashboards\u00a0",
+        "Article_Num": 3,
+        "Article_Body": "Access to dashboards is managed via owners (users that have edit permissions to the dashboard) \nNon-owner users\u2019 access can be managed in two different ways: \n\nDataset permissions \u2013 if you add to the relevant role permissions to datasets it automatically grants implicit access to all dashboards that use those permitted datasets \n\n\nDashboard roles \u2013 if you enable DASHBOARD_RBAC feature flag then you be able to manage which roles can access the dashboard \n\n\nHaving dashboard access implicitly grants read access to the associated datasets, therefore all charts will load their data even if the feature flag is turned on and no roles are assigned to roles the access will fall back to Dataset permissions \n\n\nCustomizing dashboard \nThe following URL parameters can be used to modify how the dashboard is rendered: \n\nstandalone: \n\n\n0 (default): dashboard is displayed normally \n1: Top Navigation is hidden \n2: Top Navigation + title is hidden \n3: Top Navigation + title + top level tabs are hidden \n\n\nshow_filters: \n\n\n0: render dashboard without Filter Bar \n1 (default): render dashboard with Filter Bar if native filters are enabled \n\n\nexpand_filters: \n\n\n(default): render dashboard with Filter Bar expanded if there are native filters \n\n\n0: render dashboard with Filter Bar collapsed \n1: render dashboard with Filter Bar expanded"
+    }
+]

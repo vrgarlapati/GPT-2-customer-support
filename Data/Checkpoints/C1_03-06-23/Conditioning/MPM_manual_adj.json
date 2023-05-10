@@ -1,0 +1,494 @@
+[
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "1. Getting Started with Momentum",
+        "Article_Title": "1.1. Accessing Momentum",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "1. Getting Started with Momentum",
+        "Article_Title": "1.2. User Registration\u00a0",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "1. Getting Started with Momentum",
+        "Article_Title": "1.3. Settings and Configuration",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "1. Getting Started with Momentum",
+        "Article_Title": "1.4. Securing with SSL",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "1. Getting Started with Momentum",
+        "Article_Title": "Release Notes",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.1. Introduction",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.2 Uploading Data",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.3 Ingesting Data",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.4 Transformer",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.5 Custom Processor",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.6 Emitter: Exporting Data to External System",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.7 Setting Up a Data Pipeline",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "2. Data Engineering",
+        "Article_Title": "2.8 Exploring Data",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "3. Machine Learning",
+        "Article_Title": "3.1 Machine Learning",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "3. Machine Learning",
+        "Article_Title": "3.2 Feature Engineering",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "3. Machine Learning",
+        "Article_Title": "3.3 Model Training",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "3. Machine Learning",
+        "Article_Title": "3.4 Monitoring ML Training",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "3. Machine Learning",
+        "Article_Title": "3.5 ML Prediction",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "3. Machine Learning",
+        "Article_Title": "3.6 Model Deployment",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "4. Computer Vision",
+        "Article_Title": "4.1 Image Classification",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "4. Computer Vision",
+        "Article_Title": "4.2 Object Detection using SSD",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Momentum",
+        "Section_Title": "4. Computer Vision",
+        "Article_Title": "4.3 Object Detection using YOLO",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Article_Title": "Introduction",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Article_Title": "Getting Secure Access to MLOps",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Article_Title": "Generating Security Token",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Getting Started with MLOps",
+        "Article_Title": "Integrating MLOps with Momentum",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Deploying ML Models via Momentum UI",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Deploying ML Models via MLOps UI",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Deploying ML Models via Restful API",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Model Registry",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Model Exploration",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Feature Store",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Model Management",
+        "Article_Title": "Sharing Model",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Monitoring",
+        "Article_Title": "Model Operation Monitoring",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Monitoring",
+        "Article_Title": "Model Performance Report\u00a0",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Monitoring",
+        "Article_Title": "Data Drift Report\u00a0",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Article_Title": "User and Role Management",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Article_Title": "Add User",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Article_Title": "Edit or Delete User",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "MLOps",
+        "Section_Title": "Governance",
+        "Article_Title": "Model Access Management",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "About Impulse",
+        "Article_Title": "About Impulse",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "1.Registration and Account Management",
+        "Article_Title": "1.1 Signup",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "1.Registration and Account Management",
+        "Article_Title": "1.2 Password Change",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "1.Registration and Account Management",
+        "Article_Title": "1.3 Profile Management",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "1.Registration and Account Management",
+        "Article_Title": "1.4 Forgot Password",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.1 Create a Warehouse",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.2 Edit Warehouse",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.3 Datasources In Warehouse",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.4 Ingesting Data Into Tables or Datasources",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.4.1 Ingesting From Momentum Data Pipeline",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.4.2 Uploading File Using Impulse UI",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.4.3 Ingesting From External File/Storage System",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.5 Add Data to Existing Tables",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.5.1 Update Existing Index",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.6 Delete Table Records (Rows)",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.7 Delete Tables or Datasources",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.8 Monitoring Indexing Tasks",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "2. Warehouse Management",
+        "Article_Title": "2.9 View Datasource Stats",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "3. BI Integration",
+        "Article_Title": "3.1 MVInsight Integration with Impulse",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "3. BI Integration",
+        "Article_Title": "3.2 Tableau Integration with Impulse",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4. Security, Roles and Privilege Management",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.1 Enable SSL",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.2 Securing Backend SQL Engine",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.3 Sharing and Access Control",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.4 Add User",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.5 Edit User",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.6 Create Role",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.7 Delete Role",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.8 Assign Role to User",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "4. Security, Roles and Privilege Management",
+        "Article_Title": "4.9 Edit User Privilege",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "5. System Administration",
+        "Article_Title": "5.1 System Configuration",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "5. System Administration",
+        "Article_Title": "5.2 Managing System Services",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "6. Impulse DW Restful API",
+        "Article_Title": "6. Impulse DW Restful API",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "6. Impulse DW Restful API",
+        "Article_Title": "6.1 API Token",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "6. Impulse DW Restful API",
+        "Article_Title": "6.2 API Reference",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "7. Release Notes",
+        "Article_Title": "7. Release Notes",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Impulse EDW",
+        "Section_Title": "7. Release Notes",
+        "Article_Title": "7.1 Open Source Software Components and Libraries",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Inset BI",
+        "Section_Title": "1. Getting Started with Inset BI",
+        "Article_Title": "Alerts and Reports",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Inset BI",
+        "Section_Title": "2. Connecting to Databases",
+        "Article_Title": "Connecting to a new database\u00a0",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Inset BI",
+        "Section_Title": "3. Visualizing Data",
+        "Article_Title": "Registering a new table",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Inset BI",
+        "Section_Title": "3. Visualizing Data",
+        "Article_Title": "Creating charts in Explore view",
+        "Article_Body": ""
+    },
+    {
+        "Product_Title": "Inset BI",
+        "Section_Title": "3. Visualizing Data",
+        "Article_Title": "Manage access to Dashboards\u00a0",
+        "Article_Body": ""
+    }
+]
